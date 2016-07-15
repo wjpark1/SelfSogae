@@ -23,22 +23,21 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
-
-   .state('startup', {
-    url: '/startup',
-    templateUrl: 'templates/startup.html',
-    controller: 'StartupCtrl'
-  })
-
-  .state('initial', {
-    url: '/initial',
-    templateUrl: 'templates/initial.html',
-    controller: 'InitialCtrl'
-      
-    })
-
- 
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/startup');
+  $stateProvider.state('app',{
+        url:'/first',
+        templateUrl:'templates/first.html',
+        controller:'fCtrl'
+      })
+      .state('second',{
+        url:'/second',
+        templateUrl:'templates/second.html',
+        
+      })
+      .state('third',{
+        url:'/second',
+        templateUrl:'templates/third.html',
+        
+      })
+      ;
+      $urlRouterProvider.otherwise('/first');
 });

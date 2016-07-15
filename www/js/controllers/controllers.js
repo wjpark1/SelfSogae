@@ -19,4 +19,12 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('fCtrl', ['$scope', '$state', '$timeout',
+   function($scope, $state, $timeout) {
+
+    $timeout(function() {
+      $state.go('second');
+      }, 3000);
+ }]);
+
 
