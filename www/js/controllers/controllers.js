@@ -19,11 +19,18 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('initialCtrl', function($scope,$ionicSlideBoxDelegate) {
+
+  $scope.navSlide = function(index){
+    $ionicSlideBoxDelegate.slide(index,200);
+  }
+})
+
 .controller('SplashScreenCtrl', ['$scope', '$state', '$timeout',
    function($scope, $state, $timeout) {
 
     $timeout(function() {
-      $state.go('info');
+      $state.go('initial');
       }, 3000);
  }]);
 

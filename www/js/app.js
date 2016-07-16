@@ -28,14 +28,19 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         templateUrl:'templates/SplashScreen.html',
         controller:'SplashScreenCtrl'
       })
+      .state('initial',{
+        url:'/initial',
+        templateUrl:'templates/initial.html',
+        controller:'initialCtrl'
+      })
       .state('info',{
         url:'/info',
-        templateUrl:'templates/info.html',
+        templateUrl:'templates/info.html'
         
       })
       .state('third',{
         url:'/second',
-        templateUrl:'templates/third.html',
+        templateUrl:'templates/third.html'
         
       })
       ;

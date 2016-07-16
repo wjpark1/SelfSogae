@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
 .login{
-	background: url(../img/back5.jpg);
+	background: url(../img/port-hdpi.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
@@ -29,12 +29,37 @@
 .btnOtp{
 	width:100%;
 	height:100%;
-	background-color: #d35400;
+	background-color: #eb5b78;
 	color: white;
 }
 .nav-color{
-	background-color: #d35400;
+	background-color: #eb5b78;
 }
 .bck{
-	background: url(../img/back5.jpg);
+	background: url(../img/bck8.jpg);
+}
+
+.color-red
+{
+	background-color: red;
+	width: 100%;
+	height: 275px;
+}
+
+.color-yellow
+{
+	background-color: yellow;
+	width: 100%;
+	height: 275px;
+}
+.color-blue
+{
+	background-color: blue;
+	width: 100%;
+	height: 275px;
+}
+.button-color
+{
+	background-color: #eb5b78;
+	color: white;	
 }
