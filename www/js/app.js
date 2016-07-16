@@ -24,13 +24,13 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('app',{
-        url:'/first',
-        templateUrl:'templates/first.html',
-        controller:'fCtrl'
+        url:'/SplashScreen',
+        templateUrl:'templates/SplashScreen.html',
+        controller:'SplashScreenCtrl'
       })
-      .state('second',{
-        url:'/second',
-        templateUrl:'templates/second.html',
+      .state('info',{
+        url:'/info',
+        templateUrl:'templates/info.html',
         
       })
       .state('third',{
@@ -39,5 +39,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         
       })
       ;
-      $urlRouterProvider.otherwise('/first');
+      $urlRouterProvider.otherwise('/SplashScreen');
 });
