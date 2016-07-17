@@ -18,6 +18,17 @@ angular.module('starter.controllers', [])
   console.log('initial controller');
 
 })
+.controller('detailsCtrl', function($scope,$state,$ionicPlatform) {
+  $ionicPlatform.ready(function() {
+            if(window.StatusBar){
+    window.StatusBar.overlaysWebView(false);
+    window.StatusBar.Hide();
+            }
+  });
+  $scope.abc=function(){
+    $state.go("third");
+  }
+})
 
 .controller('initialCtrl', function($scope,$ionicSlideBoxDelegate) {
 

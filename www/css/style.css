@@ -9,6 +9,14 @@
 	margin:auto;
 
 }
+.full1{
+	width:100%;
+}
+.full
+{
+	height:100%;
+	width:100%;
+}
 .container1
 {
 	height: 100%;
@@ -16,6 +24,9 @@
 }
 .row1{
 	margin: 5%;
+}
+.row2{
+	margin-top:5%;
 }
 .profileImg{
 	margin:10px;
@@ -62,4 +73,8 @@
 {
 	background-color: #eb5b78;
 	color: white;	
+}
+.sc{
+	max-height:100px !important;
+	width:100% !important;
 }

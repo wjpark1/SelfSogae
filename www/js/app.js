@@ -43,6 +43,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         templateUrl:'templates/third.html'
         
       })
+      .state('details',{
+        url:'/details',
+        templateUrl:'templates/details.html',
+        controller:'detailsCtrl'
+        
+      })
       ;
-      $urlRouterProvider.otherwise('/SplashScreen');
+      $urlRouterProvider.otherwise('/details');
 });
