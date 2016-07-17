@@ -26,7 +26,7 @@ angular.module('starter.controllers', [])
             }
   });
   $scope.abc=function(){
-    $state.go("third");
+    $state.go('info');
   }
 })
 
