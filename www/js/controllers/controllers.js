@@ -30,6 +30,15 @@ angular.module('starter.controllers', [])
   }
 })
 
+.controller('homeCtrl', function($scope,$state,$ionicPlatform) {
+  $ionicPlatform.ready(function() {
+            if(window.StatusBar){
+    window.StatusBar.overlaysWebView(false);
+    window.StatusBar.Hide();
+            }
+  });
+})
+
 .controller('initialCtrl', function($scope,$ionicSlideBoxDelegate) {
 
   $scope.navSlide = function(index){

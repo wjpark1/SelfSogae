@@ -43,6 +43,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         templateUrl:'templates/third.html'
         
       })
+      .state('home',{
+        url:'/home',
+        templateUrl:'templates/home.html',
+        controller: 'homeCtrl'
+        
+      })
       .state('details',{
         url:'/details',
         templateUrl:'templates/details.html',
@@ -50,5 +56,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         
       })
       ;
-      $urlRouterProvider.otherwise('/SplashScreen');
+      $urlRouterProvider.otherwise('/home');
 });

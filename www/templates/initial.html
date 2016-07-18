@@ -1,20 +1,40 @@
 <ion-view class="bck">
 	<ion-content>
-		<div class="row">
-			<ion-slide-box pager-click="navSlide(index)" auto-play="true" does-continue="true">
-		        <ion-slide>
-		          <div class="color-red"><h1>RED</h1></div>
-		        </ion-slide>
-		        <ion-slide>
-		          <div class="color-yellow"><h1>YELLOW</h1></div>
-		        </ion-slide>
-		        <ion-slide>
-		          <div class="color-blue"><h1>BLUE</h1></div>
-		        </ion-slide>
-		    </ion-slide-box>
+		<div class="full">
+			<div class="row" style="height:70%;max-width:100%">
+				<ion-slide-box pager-click="navSlide(index)" auto-play="true" does-continue="true">
+			        <ion-slide>
+			        	<div class="list card">
+			        		<div class="item item-image">
+			        			<img src="img/slide1.jpg">
+			        		</div>
+			        	</div>	
+			        </ion-slide>
+			        <ion-slide>
+			        	<div class="list card">
+			        		<div class="item item-image">
+			        			<img src="img/slide2.jpg">
+			        		</div>
+			        	</div>	
+			        </ion-slide>
+			        <ion-slide>
+			        	<div class="list card">
+			        		<div class="item item-image">
+			        			<img src="img/slide3.jpg">
+			        		</div>
+			        	</div>	
+			        </ion-slide>
+			    </ion-slide-box>
+			</div>
+			<div class="row" style="height:30%;max-width:100%;padding:15%">
+				<div class="col-10"></div>
+				<div class="col-80">
+					<button class="button button-block kakao-button-color" ui-sref="details">
+			  			<i class="icon ion-chatbubble"></i>  Log in with Kakao
+					</button>
+				</div>
+				<div class="col-10"></div>
+			</div>	
 		</div>
-		<button class="button button-block button-color" ui-sref="details">
-  			<i class="icon ion-chatbubble"></i>  Log in with Kakao
-		</button>
 	</ion-content>
 </ion-view>
