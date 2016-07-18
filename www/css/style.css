@@ -45,7 +45,8 @@
 	background-color: #eb5b78;
 }
 .bck{
-	background: url(../img/AppBackground.jpg);
+	/*background: url(../img/AppBackground.jpg);*/
+	background-color: #FAFAFA;
 }
 
 .button-color
@@ -63,8 +64,9 @@
 	width:100% !important;
 }
 
-.tabs-positive > .tabs{
+.tabs-positive .tabs{
 background-color: #eb5b78 !important;
+top: 0px;
 }
 
 .text-color

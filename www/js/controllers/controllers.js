@@ -46,6 +46,17 @@ angular.module('starter.controllers', [])
   }
 })
 
+.controller('infoCtrl', function($scope,$ionicSlideBoxDelegate) {
+
+   $scope.verify = function() {
+
+      var alertPopup = $ionicPopup.alert({
+        title: 'Info',
+        template: 'hello word'
+      });
+  };
+})
+
 .controller('SplashScreenCtrl', ['$scope', '$state', '$timeout',
    function($scope, $state, $timeout) {
 

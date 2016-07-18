@@ -35,7 +35,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       })
       .state('info',{
         url:'/info',
-        templateUrl:'templates/info.html'
+        templateUrl:'templates/info.html',
+        controller:'infoCtrl'
         
       })
       .state('home',{
