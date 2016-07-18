@@ -25,7 +25,7 @@ angular.module('starter.controllers', [])
     window.StatusBar.Hide();
             }
   });
-  $scope.abc=function(){
+  $scope.SignUp=function(){
     $state.go('info');
   }
 })

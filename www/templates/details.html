@@ -1,225 +1,164 @@
-<ion-view class="bck">
+<ion-view>
 <ion-content>
-<div class="list">
-<div class="row row2">
-		<div class="col-10 full">&nbsp;</div>
-			<label class = "col-80 item item-input item-select full">
-   				<div class = "input-label">
-      				Gender
-				</div>
-	
-   				<select>
-     					<option>Male</option>
-      					<option selected>Female</option>
-      					
-   				</select>
-		</label>
-		
-		<div class="col-10 full">&nbsp;</div>
-</div>
-
-<div class="row">
-		<div class="col-10 full">&nbsp;</div>
-			<label class = "col-80 item item-input item-select full">
-   				<div class = "input-label">
-      				Love to meet
-				</div>
-	
-   				<select>
-     					<option>Male</option>
-      					<option selected>Female</option>
-      			
-   				</select>
-		</label>
-		
-		<div class="col-10 full">&nbsp;</div>
-</div>
-
-<div class="row">
-		<div class="col-100 full row2"><h4 class="text-color">Personal Details</h4></div>
-</div>
-<div class="row">
-	<ion-scroll direction="y" style="height:10em;width:100%">
-		<div class="row" >
-			<div class="col-100 full">
-				<label class="item item-input">
-  					<span class="input-label">Date Of Birth</span>
-  					<input type="date">
-				</label>
-			</div>
-		</div>
-		<div class="row" >
-			<div class="col-100 full">
-				<label class="item item-input">
-  					<span class="input-label">City</span>
-  					<input type="text">
-				</label>
-			</div>
-		</div>
-		<div class="row" >
-			<div class="col-100 full">
-				<label class="item item-input">
-  					<span class="input-label">Country</span>
-  					<input type="text">
-				</label>
-			</div>
-		</div>
-		<div class="row" >
-			<div class="col-100 full">
-				<label class="item item-input">
-  					<span class="input-label">Occupation</span>
-  					<input type="text">
-				</label>
-			</div>
-		</div>
-		<div class="row" >
-			<div class="col-100 full">
-				<label class = "item item-input item-select">
-   				<div class = "input-label">
-      				Height
-				</div>
-	
-   				<select>
-     					<option selected>less than 160cms</option>
-      					<option>160-165cms</option>
-     					<option>166-170cms</option>
-     					<option>171-175cms</option>
-     					<option>176-180cms</option>
-     					<option>181-185cms</option>
-     					<option>186-190cms</option>
-     					<option>191-195cms</option>
-
-     					<option>196-200cms</option>
-     					<option>More than 200cms</option>
-     					
-      					
-   				</select>
-				</label>
-		
-			</div>
-		</div>
-		<div class="row" >
-			<div class="col-100 full">
-				<label class = "item item-input item-select">
-   				<div class = "input-label">
-      				Religion
-				</div>
-	
-   				<select>
-     					<option>Buddists</option>
-      					<option selected>Christian</option>
-     					<option>Catholic</option>
-     					<option>Hindu</option>
-     					<option>Jewish</option>
-     					<option>Muslim</option>
-     					<option>Sikh</option>
-     					<option>Shinto</option>
-     					<option>Spiritual But not religious</option>
-     					<option>Neither Spiritual nor religious</option>
-     					<option>Other</option>
-      					
-   				</select>
-				</label>
-			</div>
-		</div>
-		<div class="row" >
-			<div class="col-100 full">
-				<div class="col-100 full">
-				<label class="item item-input">
-  					<span class="input-label">High School</span>
-  					<input type="text">
-				</label>
-			</div>
-			</div>
-		</div>
-		<div class="row" >
-			<div class="col-100 full">
-				<div class="col-100 full">
-				<label class="item item-input">
-  					<span class="input-label">Bacheclors</span>
-  					<input type="text">
-				</label>
-			</div>
-			</div>
-		</div>
-		
-
-    </ion-scroll>
-	</div>
-<div class="row">
-		<div class="col-100 full row2"><h4 class="text-color">Interested In</h4></div>
+<div class="list card">
+		<div class="card">
+					<label class = "item item-input item-select">
+		   				<div class = "input-label">
+		      				Gender
+						</div>
 			
-		
-		
-</div>
-<div class="row">
-	<ion-scroll direction="y" style="height:10em;width:100%">
-		<div class="row" >
-			<div class="col-50"><ion-checkbox>Photography</ion-checkbox></div>
-			<div class="col-50"><ion-checkbox>Travelling</ion-checkbox></div>
-		</div>
-		<div class="row">
-			<div class="col-50"><ion-checkbox>Reading Books</ion-checkbox></div>
-			<div class="col-50"><ion-checkbox>Shopping</ion-checkbox></div>
-		</div>
-		<div class="row">
-			<div class="col-50"><ion-checkbox>cooking</ion-checkbox></div>
-			<div class="col-50"><ion-checkbox>Painting</ion-checkbox></div>
-		</div>
-		<div class="row">
-			<div class="col-50"><ion-checkbox>Playing Music</ion-checkbox></div>
-			<div class="col-50"><ion-checkbox>Swimming</ion-checkbox></div>
-		</div>
-		<div class="row">
-			<div class="col-50"><ion-checkbox>Sports</ion-checkbox></div>
-			<div class="col-50"><ion-checkbox>Dancing</ion-checkbox></div>
-		</div>
-		<div class="row">
-			<div class="col-50"><ion-checkbox>Singing</ion-checkbox></div>
-			<div class="col-50"><ion-checkbox>Writing</ion-checkbox></div>
-		</div>
-
-    </ion-scroll>
-</div>
-	<div class="row">
-		<div class="col"> 
-        <label class="item item-input text">
-          <textarea placeholder="Describe Yourself......" rows="2" class="row2" ng-Required="true"></textarea>
-        </label>
-        
-      </div>
-	</div>
-	<div class="row">
-		<div class="col-10 full">&nbsp;</div>
-		<div class="col-80">
-			<!--<div class="row" style="margin:0px">
-				<div class="col-20" style="margin:0px">
-
-					<ion-checkbox style="border:0px;margin:0px"></ion-checkbox>
-				</div>
-				<div class="col-80">
-					
-					<a>Terms & conditions</a>
-				</div>
-			</div>-->
-			<div class="row" >
-				<div class="col-10"></div>
-				<div class="col-90"><ion-checkbox style="border:0px;float:left;margin-right:0px"></ion-checkbox>
-
-				<div style="float:left"><label>Terms &amp; Conditions</label></div>
-
-				</div>
+		   				<select>
+		     					<option>Male</option>
+		      					<option selected>Female</option>
+		      					
+		   				</select>
+				</label>
 				
-			</div>
+
+
+					<label class = "item item-input item-select">
+		   				<div class = "input-label">
+		      				Love to meet
+						</div>
+			
+		   				<select>
+		     					<option>Male</option>
+		      					<option selected>Female</option>
+		      			
+		   				</select>
+				</label>
 		</div>
 
-		<div class="col-10 full">&nbsp;</div>
-	</div>
+		<div class="card" style="padding-left:5px">
+				<label class="item text-color"><strong>Personal Details</strong></label>
+
+
+				<ion-scroll direction="y" style="height:12em" >
+			
+					<label class="item item-input full1">
+			  			<span class="input-label">Date Of Birth</span>
+			  			<input type="date">
+					</label>
+					
+					<label class="item item-input">
+			  					<span class="input-label">City</span>
+			  					<input type="text">
+					</label>
+					<label class="item item-input">
+			  					<span class="input-label">Country</span>
+			  					<input type="text">
+					</label>
+					<label class="item item-input">
+			  					<span class="input-label">Occupation</span>
+			  					<input type="text">
+					</label>
+					<label class = "item item-input item-select">
+			   				<div class = "input-label">
+			      				Height
+							</div>
+				
+			   				<select>
+			     					<option selected>less than 160cms</option>
+			      					<option>160-165cms</option>
+			     					<option>166-170cms</option>
+			     					<option>171-175cms</option>
+			     					<option>176-180cms</option>
+			     					<option>181-185cms</option>
+			     					<option>186-190cms</option>
+			     					<option>191-195cms</option>
+
+			     					<option>196-200cms</option>
+			     					<option>More than 200cms</option>
+			     					
+			      					
+			   				</select>
+					</label>
+				
+							<label class = "item item-input item-select">
+			   				<div class = "input-label">
+			      				Religion
+							</div>
+				
+			   				<select>
+			     					<option>Buddists</option>
+			      					<option selected>Christian</option>
+			     					<option>Catholic</option>
+			     					<option>Hindu</option>
+			     					<option>Jewish</option>
+			     					<option>Muslim</option>
+			     					<option>Sikh</option>
+			     					<option>Shinto</option>
+			     					<option>Spiritual But not religious</option>
+			     					<option>Neither Spiritual nor religious</option>
+			     					<option>Other</option>
+			      					
+			   				</select>
+							</label>
+						
+					
+							
+							<label class="item item-input">
+			  					<span class="input-label">High School</span>
+			  					<input type="text">
+							</label>
+				
+							<label class="item item-input">
+			  					<span class="input-label">Bacheclors</span>
+			  					<input type="text">
+							</label>
+						
+					
+					
+
+		    		</ion-scroll>
+		    </div>
+    		<div class="card">
+					<label class="item text-color"><strong>Interested In</strong></label>
+					<ion-scroll direction="y" style="height:8em">
+						<div class="row" >
+								<div class="col-50"><ion-checkbox>Photography</ion-checkbox></div>
+								<div class="col-50"><ion-checkbox>Travelling</ion-checkbox></div>
+						</div>
+						<div class="row">
+							<div class="col-50"><ion-checkbox>Reading Books</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox>Shopping</ion-checkbox></div>
+						</div>
+						<div class="row">
+							<div class="col-50"><ion-checkbox>cooking</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox>Painting</ion-checkbox></div>
+						</div>
+						<div class="row">
+							<div class="col-50"><ion-checkbox>Playing Music</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox>Swimming</ion-checkbox></div>
+						</div>
+						<div class="row">
+							<div class="col-50"><ion-checkbox>Sports</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox>Dancing</ion-checkbox></div>
+						</div>
+						<div class="row">
+							<div class="col-50"><ion-checkbox>Singing</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox>Writing</ion-checkbox></div>
+						</div>
+
+    				</ion-scroll>
+    		</div>
+	    	<div class="card">
+			        <label class="item item-input text">
+			          <textarea placeholder="Describe Yourself......" rows="2" class="row2" ng-Required="true"></textarea>
+			        </label>
+	        </div>
+
+		<div>
+				<ion-checkbox style="border:0px;float:left;margin-right:0px"></ion-checkbox>
+
+				<div style="float:left"><label><a>Terms &amp; Conditions</a></label></div>
+		</div>
+
 
 	<div class="row">
 		<div class="col-20 full">&nbsp;</div>
 		<div class="col-60">
-		<button class="button button-color full">
+		<button class="button button-color full" ng-click="SignUp()">
   				Submit
 		</button>
 		</div>
