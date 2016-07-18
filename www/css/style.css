@@ -47,7 +47,7 @@
 	background-color: #eb5b78;
 }
 .bck{
-	background-color: #E0F2F1;
+	background-color:white;
 }
 
 .color-red
@@ -79,6 +79,3 @@
 	width:100% !important;
 }
 
-.item.item-input {
-    background-color: #E0F2F1;
-}

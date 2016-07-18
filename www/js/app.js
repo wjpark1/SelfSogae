@@ -50,5 +50,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         
       })
       ;
-      $urlRouterProvider.otherwise('/SplashScreen');
+      $urlRouterProvider.otherwise('/details');
 });
