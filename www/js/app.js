@@ -41,7 +41,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       })
       .state('selected',{
         url:'/selected',
-        templateUrl:'templates/selectedDetails.html',
+        templateUrl:'templates/SelectedDetails.html',
         
         
       })
