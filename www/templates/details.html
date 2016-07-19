@@ -6,21 +6,11 @@
 				<label class="item text-color" style="text-align:center"><strong>SignUp Details</strong></label>
 		</div>
 		<div class="card">
-					<label class = "item item-input item-select">
-		   				<div class = "input-label">
-		      				Gender
-						</div>
-			
-		   				<select>
-		     					<option>Male</option>
-		      					<option selected>Female</option>
-		      					
-		   				</select>
-				</label>
 				
 
+				<label class="item text-color"><strong>Love to meet</strong><label style="float:right">{{checkModel.value1 + " " + checkModel.value2}}</label></label>
 
-					<label class = "item item-input item-select">
+					<!--<label class = "item item-input item-select">
 		   				<div class = "input-label">
 		      				Love to meet
 						</div>
@@ -30,7 +20,25 @@
 		      					<option selected>Female</option>
 		      			
 		   				</select>
-				</label>
+				</label>-->
+				<div class="item item-toggle">
+     						Male
+     						<label class="toggle toggle-assertive">
+	       						<input type="checkbox" ng-model="checkModel.value1" ng-true-value="'Male'" ng-false-value="''">
+	       						<div class="track">
+	         						<div class="handle"></div>
+	       						</div>
+     						</label>
+  				</div>
+  				<div class="item item-toggle">
+     						Female
+     						<label class="toggle toggle-assertive">
+	       						<input type="checkbox" ng-model="checkModel.value2" ng-true-value="'Female'" ng-false-value="''">
+	       						<div class="track">
+	         						<div class="handle"></div>
+	       						</div>
+     						</label>
+  				</div>
 		</div>
 
 		<div class="card" style="padding-left:5px">
@@ -39,19 +47,9 @@
 
 				<!--<ion-scroll direction="y" style="height:12em" >-->
 			
-					<label class="item item-input full1">
-			  			<span class="input-label">Date Of Birth</span>
-			  			<input type="date">
-					</label>
 					
-					<label class="item item-input">
-			  					<span class="input-label">City</span>
-			  					<input type="text">
-					</label>
-					<label class="item item-input">
-			  					<span class="input-label">Country</span>
-			  					<input type="text">
-					</label>
+					
+					
 					<label class="item item-input">
 			  					<span class="input-label">Occupation</span>
 			  					<input type="text">
@@ -117,7 +115,7 @@
 		    		<!--</ion-scroll>-->
 		    </div>
     		<div class="card">
-					<label class="item text-color"><strong>Interested In</strong></label>
+					<label class="item text-color"><strong>Hobbies</strong></label>
 					<!--<ion-scroll direction="y" style="height:8em">-->
 						<div class="row" >
 								<div class="col-50"><ion-checkbox>Photography</ion-checkbox></div>

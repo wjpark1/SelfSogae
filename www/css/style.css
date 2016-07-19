@@ -74,3 +74,7 @@ top: 0px;
 	background-color: #eb5b78;
 	color: white;	
 }
+.toggle.toggle-assertive input:checked + .track{
+	background-color: #eb5b78 !important;
+	opacity: 0.73; 
+}
