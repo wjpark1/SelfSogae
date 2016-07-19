@@ -37,6 +37,15 @@ angular.module('starter.controllers', [])
     window.StatusBar.Hide();
             }
   });
+  $scope.toggleIcon = function($event, iconName) {
+    var buttonClasses = $event.currentTarget.className;
+    if (buttonClasses.indexOf(iconName + '-outline') > 0) {
+      buttonClasses = buttonClasses.replace('-outline', '');
+    } else {
+      buttonClasses = buttonClasses.replace(iconName, iconName + '-outline');
+    }
+    $event.currentTarget.className = buttonClasses;
+  }
 })
 
 .controller('initialCtrl', function($scope,$ionicSlideBoxDelegate) {
