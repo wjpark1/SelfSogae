@@ -39,6 +39,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller:'infoCtrl'
         
       })
+      .state('selected',{
+        url:'/selected',
+        templateUrl:'templates/selectedDetails.html',
+        
+        
+      })
       .state('home',{
         url:'/home',
         templateUrl:'templates/home.html',
@@ -52,5 +58,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         
       })
       ;
-      $urlRouterProvider.otherwise('/details');
+      $urlRouterProvider.otherwise('/initial');
 });
