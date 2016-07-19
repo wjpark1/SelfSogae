@@ -52,5 +52,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         
       })
       ;
-      $urlRouterProvider.otherwise('/home');
+      $urlRouterProvider.otherwise('/details');
 });
