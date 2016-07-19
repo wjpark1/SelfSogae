@@ -26,7 +26,7 @@ angular.module('starter.controllers', [])
             }
   });*/
   $scope.SignUp=function(){
-    $state.go('info');
+    $state.go('home');
   }
 })
 
