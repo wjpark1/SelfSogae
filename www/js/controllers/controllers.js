@@ -19,12 +19,12 @@ angular.module('starter.controllers', [])
 
 })
 .controller('detailsCtrl', function($scope,$state,$ionicPlatform) {
-  $ionicPlatform.ready(function() {
+  /*$ionicPlatform.ready(function() {
             if(window.StatusBar){
-    window.StatusBar.overlaysWebView(false);
-    window.StatusBar.Hide();
+                    window.StatusBar.overlaysWebView(false);
+                    window.StatusBar.Hide();
             }
-  });
+  });*/
   $scope.SignUp=function(){
     $state.go('info');
   }
@@ -62,7 +62,7 @@ angular.module('starter.controllers', [])
 
     $timeout(function() {
       $state.go('initial');
-      }, 3000);
+      }, 10000);
  }]);
 
 
