@@ -26,7 +26,7 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('homeCtrl', function($scope,$state,$ionicPlatform) {
+.controller('homeCtrl', function($scope,$state,$ionicPlatform, $ionicModal) {
   $ionicPlatform.ready(function() {
             if(window.StatusBar){
     window.StatusBar.overlaysWebView(false);
@@ -42,6 +42,23 @@ angular.module('starter.controllers', [])
     }
     $event.currentTarget.className = buttonClasses;
   }
+
+  $ionicModal.fromTemplateUrl('templates/profile-view.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  // Triggered in the login modal to close it
+  $scope.closeProfile = function() {
+    $scope.modal.hide();
+  };
+
+  // Open the login modal
+  $scope.viewProfile = function() {
+    $scope.modal.show();
+  };
+
 })
 
 .controller('infoCtrl', function($scope,$ionicSlideBoxDelegate) {

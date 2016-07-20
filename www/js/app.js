@@ -22,7 +22,8 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  $ionicConfigProvider.tabs.position('bottom');
   $stateProvider.state('app',{
         url:'/SplashScreen',
         templateUrl:'templates/SplashScreen.html',
@@ -47,9 +48,35 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
       })
       .state('home',{
         url:'/home',
+        abstract: true,
         templateUrl:'templates/home.html',
         controller: 'homeCtrl'
         
+      })
+
+      .state('home.match', {
+        url: "/match",
+        views: {
+          'match-tab': {
+            templateUrl: "templates/match.html"
+          }
+        }
+      })
+      .state('home.chat', {
+        url: "/chat",
+        views: {
+          'chat-tab': {
+            templateUrl: "templates/chat.html"
+          }
+        }
+      })
+      .state('home.profile', {
+        url: "/profile",
+        views: {
+          'profile-tab': {
+            templateUrl: "templates/profile.html"
+          }
+        }
       })
       .state('details',{
         url:'/details',
@@ -58,5 +85,5 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         
       })
       ;
-      $urlRouterProvider.otherwise('/initial');
+      $urlRouterProvider.otherwise('/home/match');
 });

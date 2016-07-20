@@ -73,7 +73,6 @@
 
 .tabs-positive .tabs{
 background-color: #eb5b78 !important;
-top: 0px;
 }
 
 .text-color
@@ -84,4 +83,13 @@ top: 0px;
 .toggle.toggle-assertive input:checked + .track{
 	background-color: #eb5b78 !important;
 	opacity: 0.73; 
+}
+.icon.ion-ios-heart
+{
+	color: #eb5b78;
+}
+.bar-color
+{
+	background-color: #eb5b78 !important;
+	color: white;
 }
