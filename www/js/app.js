@@ -23,11 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
 })
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.tabs.position('bottom');
-  $stateProvider.state('app',{
-        url:'/SplashScreen',
-        templateUrl:'templates/SplashScreen.html',
-        controller:'SplashScreenCtrl'
-      })
+  $stateProvider
       .state('initial',{
         url:'/initial',
         templateUrl:'templates/initial.html',
@@ -84,5 +80,5 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         
       })
       ;
-      $urlRouterProvider.otherwise('/home/match');
+      $urlRouterProvider.otherwise('/initial');
 });
