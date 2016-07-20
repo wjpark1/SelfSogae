@@ -13,11 +13,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('InitialCtrl', function($scope) {
 
-  console.log('initial controller');
-
-})
 .controller('detailsCtrl', function($scope,$state,$ionicPlatform) {
   /*$ionicPlatform.ready(function() {
             if(window.StatusBar){
@@ -45,13 +41,6 @@ angular.module('starter.controllers', [])
       buttonClasses = buttonClasses.replace(iconName, iconName + '-outline');
     }
     $event.currentTarget.className = buttonClasses;
-  }
-})
-
-.controller('initialCtrl', function($scope,$ionicSlideBoxDelegate) {
-
-  $scope.navSlide = function(index){
-    $ionicSlideBoxDelegate.slide(index,200);
   }
 })
 
