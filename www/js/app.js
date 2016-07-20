@@ -40,6 +40,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller:'infoCtrl'
         
       })
+      .state('selected',{
+        url:'/selected',
+        templateUrl:'templates/SelectedDetails.html',
+        
+        
+      })
       .state('home',{
         url:'/home',
         templateUrl:'templates/home.html',
