@@ -48,9 +48,35 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       })
       .state('home',{
         url:'/home',
+        abstract: true,
         templateUrl:'templates/home.html',
         controller: 'homeCtrl'
         
+      })
+
+      .state('home.match', {
+        url: "/match",
+        views: {
+          'match-tab': {
+            templateUrl: "templates/match.html"
+          }
+        }
+      })
+      .state('home.chat', {
+        url: "/chat",
+        views: {
+          'chat-tab': {
+            templateUrl: "templates/chat.html"
+          }
+        }
+      })
+      .state('home.profile', {
+        url: "/profile",
+        views: {
+          'profile-tab': {
+            templateUrl: "templates/profile.html"
+          }
+        }
       })
       .state('details',{
         url:'/details',
@@ -59,5 +85,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         
       })
       ;
-      $urlRouterProvider.otherwise('/home');
+      $urlRouterProvider.otherwise('/home/match');
 });

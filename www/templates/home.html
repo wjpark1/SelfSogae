@@ -1,52 +1,22 @@
 <ion-view class="bck">
-	<div class="bar bar-header bar-stable bar-color">
-	  <h1 class="title">bar-stable</h1>
-	</div>
+	<ion-nav-bar class="nav-title-slide-ios7 bar-color">
+      <ion-nav-back-button class="button-icon ion-arrow-left-c">
+      </ion-nav-back-button>
+    </ion-nav-bar>
 	<ion-tabs class="tabs-positive tabs-striped tabs-icon-top">
-	    <ion-tab title="Matches" icon-on="ion-ios-people" icon-off="ion-ios-people-outline">
+	    <ion-tab title="Matches" ui-sref="home.match" icon-on="ion-ios-people" icon-off="ion-ios-people-outline">
 	      	<!-- Tab 1 content -->
-    		<ion-content scroll="true">
-		      	<div class="card card-margin">	
-			      <div class="row">
-			        <img src="../img/download.jpg">
-			      </div>
-			      <div class="row">
-			      	<div class="col">
-			      		<h3>Name</h3>
-			      	</div>
-			      	<div class="col">
-			      		<h3>Age</h3>
-			      	</div>
-			      	<div class="col">
-			      		<button ng-click="viewProfile()">View</button>
-			      	</div>
-			      </div>
-		      	</div>
-		      	<div class="card">
-		      		<div class="row">
-				    	<img src="../img/download.jpg">
-				    </div>
-			      	<div class="row">
-			      		<div class="col">
-			      			<h3>Name</h3>
-			      		</div>
-				      	<div class="col">
-				      		<h3>Age</h3>
-				      	</div>
-				      	<div class="col">
-				      		<button ng-click="viewProfile()">View</button>
-				      	</div>
-			      </div>
-		      	</div>
-	    	</ion-content>
+    		<ion-nav-view name="match-tab"></ion-nav-view>
 	    </ion-tab>
 
-	    <ion-tab title="Chat" icon-on="ion-ios-chatboxes" icon-off="ion-ios-chatboxes-outline">
+	    <ion-tab title="Chat" ui-sref="home.chat" icon-on="ion-ios-chatboxes" icon-off="ion-ios-chatboxes-outline">
 	      	<!-- Tab 2 content -->
+	      	<ion-nav-view name="chat-tab"></ion-nav-view>
 	    </ion-tab>
 
-	    <ion-tab title="Profile" icon-on="ion-ios-person" icon-off="ion-ios-person-outline" href="#/app/profile">
+	    <ion-tab title="Profile" ui-sref="home.profile" icon-on="ion-ios-person" icon-off="ion-ios-person-outline" href="#/app/profile">
 	      	<!-- Tab 3 content -->
+	      	<ion-nav-view name="profile-tab"></ion-nav-view>
 	    </ion-tab>
 	</ion-tabs>
 </ion-view>
