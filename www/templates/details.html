@@ -8,11 +8,11 @@
 		<div class="card">
 				
 
-				<label class="item text-color"><strong>Love to meet</strong><label style="float:right">{{checkModel.value1 + " " + checkModel.value2}}</label></label>
+				<label class="item text-color"><strong>Love to meet</strong><label style="float:right">{{checkModel.value1}}<label ng-show="checkModel.value1 === 'Male' && checkModel.value2 === 'Female'">&nbsp; &amp; &nbsp;</label>{{ checkModel.value2}}</label></label>
 				<div class="item item-toggle">
      						Male
      						<label class="toggle toggle-assertive">
-	       						<input type="checkbox" ng-model="checkModel.value1" ng-true-value="'Male'" ng-false-value="''">
+	       						<input type="checkbox" ng-model="checkModel.value1" ng-true-value="'Male'" ng-false-value="''" >
 	       						<div class="track">
 	         						<div class="handle"></div>
 	       						</div>
@@ -99,28 +99,27 @@
 					<label class="item text-color"><strong>Hobbies</strong></label>
 					<!--<ion-scroll direction="y" style="height:8em">-->
 						<div class="row" >
-								<div class="col-50"><ion-checkbox>Music</ion-checkbox></div>
-								<div class="col-50"><ion-checkbox>Travelling</ion-checkbox></div>
+								<div class="col-50"><ion-checkbox>Photography</ion-checkbox></div>
+								<div class="col-50"><ion-checkbox>Traveling</ion-checkbox></div>
 						</div>
+						
 						<div class="row">
-							<div class="col-50"><ion-checkbox>Books</ion-checkbox></div>
-							<div class="col-50"><ion-checkbox>Shopping</ion-checkbox></div>
-						</div>
-						<div class="row">
-							<div class="col-50"><ion-checkbox>Cooking</ion-checkbox></div>
-							<div class="col-50"><ion-checkbox>Painting</ion-checkbox></div>
-						</div>
-						<div class="row">
-							<div class="col-50"><ion-checkbox>Dancing</ion-checkbox></div>
-							<div class="col-50"><ion-checkbox>Swimming</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox>Art</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox>Music</ion-checkbox></div>
 						</div>
 						<div class="row">
 							<div class="col-50"><ion-checkbox>Sports</ion-checkbox></div>
-							<div class="col-50"><ion-checkbox>Photography</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox>Dancing</ion-checkbox></div>
 						</div>
 						<div class="row">
-							<div class="col-50"><ion-checkbox>Singing</ion-checkbox></div>
-							<div class="col-50"><ion-checkbox>Writing</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox>Nature</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox>Technology</ion-checkbox></div>
+						</div>
+						<div class="row">
+							<div class="col-100"><ion-checkbox>Reading/Writing</ion-checkbox></div>
+						</div>
+						<div class="row">
+							<div class="col-100"><ion-checkbox>Cooking/Eating</ion-checkbox></div>
 						</div>
 
     				<!--</ion-scroll>-->

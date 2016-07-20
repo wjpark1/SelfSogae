@@ -23,11 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider.state('app',{
-        url:'/SplashScreen',
-        templateUrl:'templates/SplashScreen.html',
-        controller:'SplashScreenCtrl'
-      })
+  $stateProvider
       .state('initial',{
         url:'/initial',
         templateUrl:'templates/initial.html',
