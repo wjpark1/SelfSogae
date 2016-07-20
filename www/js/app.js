@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers','starter.loginControllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -21,9 +21,13 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   });
 })
-
-.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  $ionicConfigProvider.tabs.position('bottom');
+  $stateProvider.state('app',{
+        url:'/SplashScreen',
+        templateUrl:'templates/SplashScreen.html',
+        controller:'SplashScreenCtrl'
+      })
       .state('initial',{
         url:'/initial',
         templateUrl:'templates/initial.html',
@@ -43,9 +47,35 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       })
       .state('home',{
         url:'/home',
+        abstract: true,
         templateUrl:'templates/home.html',
         controller: 'homeCtrl'
         
+      })
+
+      .state('home.match', {
+        url: "/match",
+        views: {
+          'match-tab': {
+            templateUrl: "templates/match.html"
+          }
+        }
+      })
+      .state('home.chat', {
+        url: "/chat",
+        views: {
+          'chat-tab': {
+            templateUrl: "templates/chat.html"
+          }
+        }
+      })
+      .state('home.profile', {
+        url: "/profile",
+        views: {
+          'profile-tab': {
+            templateUrl: "templates/profile.html"
+          }
+        }
       })
       .state('details',{
         url:'/details',
@@ -54,5 +84,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         
       })
       ;
-      $urlRouterProvider.otherwise('/initial');
+      $urlRouterProvider.otherwise('/home/match');
 });
