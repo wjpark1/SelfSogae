@@ -25,23 +25,55 @@ angular.module('starter.controllers', [])
     $state.go('selected');
   }
 })
-.controller('chatboxCtrl', function($scope,$state,$ionicPlatform,$ionicScrollDelegate) {
-  
-   $scope.data="";
+.controller('chatboxCtrl', function($scope,$state,$ionicPlatform,$ionicScrollDelegate,socket) {
+ var x = 1; 
+socket.emit("join_room",{'room':"temp"});
+var room = "temp";
+    // var auth;
+    // socket.emit('authentication',{token:"",userId:""});
+    // socket.on('authenticated',function(body){
+    //   if(body.success == true){
+    //     auth = true;
+    //   }
+    // });
+  $scope.chat="";
+
   $scope.messages = [{
-    type:"1",
-    text:"abccccc"
+   type:"",
+    text:""
   }];
-
-  $scope.sendMessage = function() {
-    console.log($scope.data);
-    $scope.messages.push({type:"0",text:$scope.data});
-
-    $scope.messages.push({type:"1",text:"Yes Sir"});
-
-
+ $scope.sendMessage = function() {
+        // if(auth){
+     
+         $scope.messages.push({type:"0",text:$scope.chat});  
+          socket.emit('chatting',{"message":$scope.chat});
+          console.log($scope.messages);
+        // }
   }
+socket.on('new_message',function(data){
 
+  //var x = data.body+"aaya hai";
+    console.log(data.body+"aaya hai");
+    $scope.messages.push({type:"1",text:data.body});
+    console.log($scope.messages);
+      
+ });
+ 
+  console.log("chat is running");
+  console.log(socket);
+ // $scope.chat={
+ //  room:"",
+ //  message:""
+ // };
+ // $scope.abcd=function(){
+ //  socket.emit('chat',{'room':$scope.chat.room,'message':$scope.chat.message});
+ //  console.log($scope.chat.room);
+ // };
+ // $scope.abcd2=function(){
+ //  socket.emit("joinroom",{'room':$scope.chat.room});  
+ // };
+ 
+ 
 })
 
 .controller('homeCtrl', function($scope,$state,$ionicPlatform, $ionicModal) {

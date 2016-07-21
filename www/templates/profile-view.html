@@ -1,6 +1,6 @@
 <ion-modal-view>
-  <ion-header-bar class="text-color">
-    <h1 class="title">Profile</h1>
+  <ion-header-bar class="bar-color">
+    <h1 class="title text-color">Profile</h1>
     <div class="buttons">
       <button class="button button-clear" ng-click="closeProfile()">Close</button>
     </div>
@@ -8,12 +8,13 @@
   <ion-content>
     <div class="card">
       <div class="row">
-        <img src="../img/download.jpg">
+        <div class="col col-15"></div>
+        <div class="col col-70"><img src="../img/download.jpg" class="img-modal"></div>
+        <div class="col col-15"></div> 
       </div>
       <div class="row">
         <a class="button button-icon icon ion-ios-heart-outline" ng-click="toggleIcon($event, 'ion-ios-heart')"></a>
       </div>
-      
     </div>
   </ion-content>
 </ion-modal-view>
