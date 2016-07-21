@@ -13,11 +13,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('InitialCtrl', function($scope) {
 
-  console.log('initial controller');
-
-})
 .controller('detailsCtrl', function($scope,$state,$ionicPlatform) {
   /*$ionicPlatform.ready(function() {
             if(window.StatusBar){
@@ -28,6 +24,24 @@ angular.module('starter.controllers', [])
   $scope.SignUp=function(){
     $state.go('selected');
   }
+})
+.controller('chatboxCtrl', function($scope,$state,$ionicPlatform,$ionicScrollDelegate) {
+  
+   $scope.data="";
+  $scope.messages = [{
+    type:"1",
+    text:"abccccc"
+  }];
+
+  $scope.sendMessage = function() {
+    console.log($scope.data);
+    $scope.messages.push({type:"0",text:$scope.data});
+
+    $scope.messages.push({type:"1",text:"Yes Sir"});
+
+
+  }
+
 })
 
 .controller('homeCtrl', function($scope,$state,$ionicPlatform, $ionicModal) {
@@ -63,13 +77,6 @@ angular.module('starter.controllers', [])
     $scope.modal.show();
   };
 
-})
-
-.controller('initialCtrl', function($scope,$ionicSlideBoxDelegate) {
-
-  $scope.navSlide = function(index){
-    $ionicSlideBoxDelegate.slide(index,200);
-  }
 })
 
 .controller('infoCtrl', function($scope,$ionicSlideBoxDelegate) {
