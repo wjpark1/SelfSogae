@@ -15,7 +15,7 @@ angular.module('starter.loginControllers', ['ngStorage', 'ngCordova'])
             console.log("login sucessfull with token = " + result.access_token);
             $location.path("/details");          // if sucessfull redirect to detail page
         }, function(error) {                     //handel any error
-            alert("Something is wrong... Please try again");
+            alert("Login unsuccessful.! Please try again.. ");
             console.log(error);
         });
     };
