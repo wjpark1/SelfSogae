@@ -93,3 +93,21 @@ background-color: #eb5b78 !important;
 	background-color: #eb5b78 !important;
 	color: white;
 }
+.img-size
+{
+	width: 150px;
+	height: 150px;
+}
+.img-modal
+{
+	width:300px;
+	height:300px;
+}
+
+.img-profile
+{
+	background: url(../img/slide1.jpg);
+	width: 400px;
+	height: 200px;
+}
+
