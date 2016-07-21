@@ -1,0 +1,30 @@
+<ion-view>
+<ion-content  class="content-stable">
+ 			<div ng-repeat="message in messages">
+ 				<div>
+ 				<span ng-show="message.type==1">
+ 						{{message.text}}
+ 				</span>
+ 				<span ng-show="message.type==0">
+ 						{{message.text}}
+ 				</span>
+ 				</div>
+ 			</div>
+
+ 			
+     
+</ion-content>
+	<ion-footer-bar >
+
+<div class="list full1">
+	<div class="item item-input-inset" style="background-color:#fff">
+ 				<label class="item-input-wrapper"  style="background-color:#fff">
+ 					<input type="text" ng-model="data" placeholder="Type message...">
+ 				</label>
+ 				<button class="button button-positive" ng-click="sendMessage()">Send</button>
+ 			</div>
+ 		</div>	
+
+   </ion-footer-bar>
+
+</ion-view>

@@ -25,6 +25,24 @@ angular.module('starter.controllers', [])
     $state.go('selected');
   }
 })
+.controller('chatboxCtrl', function($scope,$state,$ionicPlatform,$ionicScrollDelegate) {
+  
+   $scope.data="";
+  $scope.messages = [{
+    type:"1",
+    text:"abccccc"
+  }];
+
+  $scope.sendMessage = function() {
+    console.log($scope.data);
+    $scope.messages.push({type:"0",text:$scope.data});
+
+    $scope.messages.push({type:"1",text:"Yes Sir"});
+
+
+  }
+
+})
 
 .controller('homeCtrl', function($scope,$state,$ionicPlatform, $ionicModal) {
   $ionicPlatform.ready(function() {
