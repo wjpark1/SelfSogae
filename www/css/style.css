@@ -109,11 +109,13 @@ background-color: #eb5b78 !important;
 	height:300px;
 }
 
+
 .img-profile
 {
 	background: url(../img/slide1.jpg);
 	width: 90%;
 	height: 200px;
+
 	border-radius: 10px 50px;
 	margin-top: 20%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
