@@ -7,7 +7,7 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
+    
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -15,6 +15,9 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+    <!-- Socket.io js -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js"></script>
+    <script src="lib/angular-socket-io/socket.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="js/ng-cordova.min.js"></script>
     <script src="cordova.js"></script>
@@ -25,7 +28,7 @@
     <!-- your app's controllers js -->
     <script src="js/controllers/controllers.js"></script>
     <script src="js/controllers/loginControllers.js"></script>
-
+     <script src="js/chat-service.js"></script>
     <!-- your app's services js -->
   </head>
 
