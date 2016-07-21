@@ -87,11 +87,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         
       })
       ;
-<<<<<<< HEAD
-      $urlRouterProvider.otherwise('/details');
-});
-=======
-      $urlRouterProvider.otherwise('/chatbox');
+      $urlRouterProvider.otherwise('/home/match');
 })
 
 .directive('textarea', function() {
@@ -149,4 +145,3 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
 })
 
 ;
->>>>>>> 928097f0e7d95532a66e988a2ffd1e059fdbb965
