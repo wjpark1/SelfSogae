@@ -1,11 +1,31 @@
 <ion-view view-title="Match">
 	<ion-content scroll="true">
-	  	<div class="card">	
-	      <div class="row">
+	  	<div class="card match-card-back">
+	  		<div class="match-background" ng-click="viewProfile()"></div>	
+	      <!-- <div class="row">
 	      	<div class="col col-15"></div>
 	      	<div class="col col-70"><img src="../img/download.jpg" ng-click="viewProfile()" class="img-size"></div>
 	      	<div class="col col-15"></div> 
+	      </div> -->
+	      <div class="row">
+	      	<div class="col">
+	      		<h3>Name</h3>
+	      	</div>
+	      	<div class="col">
+		      	<h6>Age</h6>
+	      	</div>
+	      	<div class="col">
+        		<a class="button button-icon icon ion-ios-heart-outline" ng-click="toggleIcon($event, 'ion-ios-heart')" ></a>
+	      	</div>
 	      </div>
+	  	</div>
+	  	<div class="card match-card-back">
+	  		<div class="match-background" ng-click="viewProfile()"></div>	
+	      <!-- <div class="row">
+	      	<div class="col col-15"></div>
+	      	<div class="col col-70"><img src="../img/download.jpg" ng-click="viewProfile()" class="img-size"></div>
+	      	<div class="col col-15"></div> 
+	      </div> -->
 	      <div class="row">
 	      	<div class="col">
 	      		<h3>Name</h3>
@@ -18,26 +38,8 @@
 	      	</div>
 	      </div>
 	  	</div>
-	  	<div class="card">
-	  		<div class="row">
-		      	<div class="col col-15"></div>
-		      	<div class="col col-70"><img src="../img/download.jpg" ng-click="viewProfile()" class="img-size"></div>
-		      	<div class="col col-15"></div> 
-		    </div>
-	      	<div class="row">
-	      		<div class="col">
-	      			<h3>Name</h3>
-	      		</div>
-		      	<div class="col">
-		      		<h6>Age</h6>
-		      	</div>
-		      	<div class="col">
-        			<a class="button button-icon icon ion-ios-heart-outline" ng-click="toggleIcon($event, 'ion-ios-heart')"></a>
-		      	</div>
-	      </div>
-	  	</div>
     </ion-content>
 	  	<button class="button button-full button-color ion-ios-heart" style="margin-top:572px;">
-		  Buy more Hearts
+		  <strong>Buy more Hearts</strong>
 		</button>
 </ion-view>
