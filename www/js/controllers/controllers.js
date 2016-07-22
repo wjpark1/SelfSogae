@@ -121,6 +121,13 @@ socket.on('new_message',function(data){
   };
 })
 
+.controller('matchCtrl',function($scope,$ionicSlideBoxDelegate) {
+
+  $scope.navSlide = function(index){
+    $ionicSlideBoxDelegate.slide(index,200);
+  }
+})
+
 .controller('SplashScreenCtrl', ['$scope', '$state', '$timeout',
    function($scope, $state, $timeout) {
 

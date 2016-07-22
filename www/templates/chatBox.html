@@ -27,8 +27,7 @@
       
                   <div ng-show="message.type == 1">
                       
-                    <img ng-click="viewProfile(message)" class="profile-pic left" 
-                          ng-src="{{toUser.pic}}"><!-- onerror="onProfilePicError(this)" /-->
+                    <!-- onerror="onProfilePicError(this)" /-->
       
                       <div class="chat-bubble left">
       
@@ -46,8 +45,6 @@
       
                   <div ng-show="message.type==0">
                     
-                       <img ng-click="viewProfile(message)" class="profile-pic right" 
-                          ng-src="{{user.pic}}" onerror="onProfilePicError(this)" />
                     
                       <div class="chat-bubble right">
       
