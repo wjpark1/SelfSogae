@@ -88,6 +88,6 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         
       })
       ;
-      $urlRouterProvider.otherwise('/home/match');
+      $urlRouterProvider.otherwise('/initial');
 })
 

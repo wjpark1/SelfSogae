@@ -138,3 +138,11 @@ background-color: #eb5b78 !important;
    height: 300px;
    border: 2px solid blue;
 }
+.slide1-pos
+{
+	margin-top:-17px;
+}
+.slide2-pos
+{
+	margin-top:-25px;
+}
