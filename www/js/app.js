@@ -87,6 +87,6 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         
       })
       ;
-      $urlRouterProvider.otherwise('/chatbox');
+      $urlRouterProvider.otherwise('/home/match');
 })
 
