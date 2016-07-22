@@ -1,7 +1,7 @@
 angular.module('starter.chat-services',[])
 .factory('socket', function($http, socketFactory){
 
-  var myIoSocket = io.connect('http://c5bd3196.ngrok.io');
+  var myIoSocket = io.connect('http://8c17913c.ngrok.io');
 
   var mySocket = socketFactory({
     ioSocket: myIoSocket
