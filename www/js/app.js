@@ -77,7 +77,8 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         url: "/profile",
         views: {
           'profile-tab': {
-            templateUrl: "templates/profile.html"
+            templateUrl: "templates/profile.html",
+            controller: 'profileCtrl'
           }
         }
       })
@@ -87,12 +88,16 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         controller:'detailsCtrl'
         
       })
+      .state('settings',{
+        url:'/settings',
+        templateUrl:'templates/settings.html'
+      })
       .state('terms',{
         url:'/terms',
         templateUrl:'templates/terms.html'
       })
       ;
-      $urlRouterProvider.otherwise('/home/match');
+      $urlRouterProvider.otherwise('/settings');
 })
 .filter('nl2br', ['$filter',
   function($filter) {

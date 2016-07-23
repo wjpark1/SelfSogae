@@ -128,6 +128,12 @@ socket.on('new_message',function(data){
   }
 })
 
+.controller('profileCtrl',function($scope,$state){
+  $scope.Edit=function(){
+     $state.go('details');
+  }
+})
+
 .controller('SplashScreenCtrl', ['$scope', '$state', '$timeout',
    function($scope, $state, $timeout) {
 
