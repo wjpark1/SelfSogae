@@ -87,6 +87,10 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         controller:'detailsCtrl'
         
       })
+      .state('terms',{
+        url:'/terms',
+        templateUrl:'templates/terms.html'
+      })
       ;
       $urlRouterProvider.otherwise('/initial');
 })
