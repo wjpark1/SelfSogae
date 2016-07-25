@@ -19,28 +19,35 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    
+
+
   });
 })
+
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.tabs.position('bottom');
   $stateProvider
-      .state('initial',{
-        url:'/initial',
-        templateUrl:'templates/initial.html',
-        controller:'initialCtrl'
+      .state('login',{
+        url:'/login',
+        templateUrl:'templates/login.html',
+        controller:'loginCtrl'
       })
+      .state('firstSignup',{
+        url:'/firstSignup',
+        templateUrl:'templates/firstSignup.html',
+        controller:'signupCtrl'
+      })
+
       .state('info',{
         url:'/info',
         templateUrl:'templates/info.html',
         controller:'infoCtrl'
-        
       })
       .state('chatbox',{
         url:'/chatbox',
         templateUrl:'templates/chatBox.html',
         controller:'chatboxCtrl'
-      
-        
       })
       .state('selected',{
         url:'/selected',
@@ -80,13 +87,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
           }
         }
       })
-      .state('details',{
-        url:'/details',
-        templateUrl:'templates/details.html',
-        controller:'detailsCtrl'
-        
-      })
       ;
-      $urlRouterProvider.otherwise('/home/match');
+      $urlRouterProvider.otherwise('login');
 })
 
