@@ -1,9 +1,40 @@
-<ion-view>
-<ion-nav-title>
-	<div></div>
-</ion-nav-title>
-<ion-content class="login">
+<ion-view class="bck">
+	<ion-content scroll="false">
+		<div class="full">
+				<ion-slide-box class="card" pager-click="navSlide(index)"	auto-play="true" does-continue="true" >
+			        <ion-slide>
+			        		
+			        			<img src="img/slide1.jpg" class="full">
+			        	
+			        </ion-slide>
+			        <ion-slide>
+			        			<img src="img/slide2.jpg" class="full">
+			        		
+			        </ion-slide>
+			        <ion-slide>
+			        			<img src="img/slide3.jpg" class="full">
+			        	
+			        </ion-slide>
+			    </ion-slide-box>
 
-</ion-content>
+				<div class="row">
+					<div class="col-10"></div>
+					<div class="col-90">
+						<p>By continuing, you agree to our <strong><a ui-sref="terms">Terms & Conditions</a></strong>.</p>
+					</div>
+				</div>
+		
+				<div class="row" >
+					<div class="col-10"></div>
+					<div class="col-80">
+						<button class="button button-block fb-button-color" ng-click="login()">
+				  			<i class="icon ion-social-facebook">  </i>   Log in with Facebook
+						</button>
+					</div>
+					<div class="col-10"></div>
+				</div>
 
+		</div>
+	</ion-content>
+	
 </ion-view>

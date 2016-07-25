@@ -14,7 +14,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('detailsCtrl', function($scope,$state,$ionicPlatform) {
+.controller('signupCtrl', function($scope,$state,$ionicPlatform) {
   /*$ionicPlatform.ready(function() {
             if(window.StatusBar){
                     window.StatusBar.overlaysWebView(false);
