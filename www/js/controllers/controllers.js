@@ -14,7 +14,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('detailsCtrl', function($scope,$state,$ionicPlatform) {
+.controller('signupCtrl', function($scope,$state,$ionicPlatform) {
   /*$ionicPlatform.ready(function() {
             if(window.StatusBar){
                     window.StatusBar.overlaysWebView(false);
@@ -25,6 +25,7 @@ angular.module('starter.controllers', [])
     $state.go('selected');
   }
 })
+
 .controller('chatboxCtrl', function($scope,$state,$ionicPlatform,$ionicScrollDelegate,socket) {
 // var x = 1; 
 socket.emit("join_room",{'room':"temp"});
