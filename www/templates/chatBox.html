@@ -16,13 +16,13 @@
           view-title="<i class='icon ion-chatbubble user-messages-top-icon'></i>">
         
        <ion-nav-bar class="bar-positive" no-tap-scroll="false">
-      <ion-nav-back-button class="button-icon ion-arrow-left-c">
+      <ion-nav-back-button>
       </ion-nav-back-button>
     </ion-nav-bar>
           <ion-content has-bouncing="true" class="has-header has-footer" 
               delegate-handle="userMessageScroll">
             
-              <div ng-repeat="message in messages" class="message-wrapper">
+              <div ng-repeat="message in messages track by $index" class="message-wrapper">
                  <!-- on-hold="onMessageHold($event, $index, message)"-->
       
                   <div ng-show="message.type == 1">
@@ -45,6 +45,8 @@
       
                   <div ng-show="message.type==0">
                     
+
+
                     
                       <div class="chat-bubble right">
       
@@ -69,7 +71,7 @@
           <form name="sendMessageForm" ng-submit="sendMessage()" novalidate>
               <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach>
                   <label class="item-input-wrapper">
-                      <textarea ng-model="textbox" value="" placeholder="Send a message..." required minlength="1" maxlength="1500" ></textarea>
+                      <textarea android:inputType="textShortMessage" ng-model="textbox" style="width:100%" value="" placeholder="Send a message..." required minlength="1" maxlength="1500" ></textarea>
                   </label>
                   <div class="footer-btn-wrap">
                     <button class="button button-icon icon ion-android-send footer-btn" type="submit"
