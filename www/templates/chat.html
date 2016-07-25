@@ -1,5 +1,17 @@
 <ion-view view-title="Chat">
 	<ion-content>
-		<h1>Hello</h1>
+		<ion-list ng-controller="MyCtrl"
+          show-delete="shouldShowDelete"
+          show-reorder="shouldShowReorder"
+          can-swipe="listCanSwipe">
+
+            <a class="item item-avatar" href="#">
+      <img src="venkman.jpg">
+        <h2>Venkman</h2>
+      <p>Back off, man. I'm a scientist.</p>
+    </a>
+  
+ 
+</ion-list>
 	</ion-content>
 </ion-view>
