@@ -14,7 +14,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('detailsCtrl', function($scope,$state,$ionicPlatform) {
+.controller('signupCtrl', function($scope,$state,$ionicPlatform) {
   /*$ionicPlatform.ready(function() {
             if(window.StatusBar){
                     window.StatusBar.overlaysWebView(false);
@@ -25,7 +25,9 @@ angular.module('starter.controllers', [])
     $state.go('selected');
   }
 })
+
 .controller('chatboxCtrl', function($scope,$timeout,$interval,$state,$ionicPlatform,$ionicScrollDelegate,socket) {
+
 // var x = 1; 
 socket.emit("join_room",{'room':"temp"});
 var room = "temp";
@@ -166,6 +168,12 @@ socket.on('new_message',function(data){
 
   $scope.navSlide = function(index){
     $ionicSlideBoxDelegate.slide(index,200);
+  }
+})
+
+.controller('profileCtrl',function($scope,$state){
+  $scope.Edit=function(){
+     $state.go('details');
   }
 })
 

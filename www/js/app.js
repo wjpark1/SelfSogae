@@ -19,28 +19,35 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    
+
+
   });
 })
+
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.tabs.position('bottom');
   $stateProvider
-      .state('initial',{
-        url:'/initial',
-        templateUrl:'templates/initial.html',
-        controller:'initialCtrl'
+      .state('login',{
+        url:'/login',
+        templateUrl:'templates/login.html',
+        controller:'loginCtrl'
       })
+      .state('firstSignup',{
+        url:'/firstSignup',
+        templateUrl:'templates/firstSignup.html',
+        controller:'signupCtrl'
+      })
+
       .state('info',{
         url:'/info',
         templateUrl:'templates/info.html',
         controller:'infoCtrl'
-        
       })
       .state('chatbox',{
         url:'/chatbox',
         templateUrl:'templates/chatBox.html',
         controller:'chatboxCtrl'
-      
-        
       })
       .state('selected',{
         url:'/selected',
@@ -77,18 +84,22 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         url: "/profile",
         views: {
           'profile-tab': {
-            templateUrl: "templates/profile.html"
+            templateUrl: "templates/profile.html",
+            controller: 'profileCtrl'
           }
         }
       })
-      .state('details',{
-        url:'/details',
-        templateUrl:'templates/details.html',
-        controller:'detailsCtrl'
-        
+     
+      .state('settings',{
+        url:'/settings',
+        templateUrl:'templates/settings.html'
+      })
+      .state('terms',{
+        url:'/terms',
+        templateUrl:'templates/terms.html'
       })
       ;
-      $urlRouterProvider.otherwise('/chatbox');
+      $urlRouterProvider.otherwise('/settings');
 })
 .filter('nl2br', ['$filter',
   function($filter) {

@@ -110,15 +110,15 @@ background-color: #eb5b78 !important;
 }
 
 
-.img-profile
+.img-cover
 {
 	background: url(../img/slide1.jpg);
 	width: 95%;
 	height: 300px;
-
+	position:relative;
 	border-radius: 10px 50px;
 	margin-top: 20%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -126,10 +126,6 @@ background-color: #eb5b78 !important;
 
 
 /* chat Interface      */
-
-
-
-
 
 .bar-footer {
   overflow: visible !important;
@@ -326,13 +322,18 @@ a.autolinker {
 	width: 100%;
 	height: 200px;
 }
+.match-background1
+{
+	background: url(../img/slide2.jpg);
+	width: 100%;
+	height: 200px;
+}
 .match-card-back
 {
 	background-color: #fce8ec;
 	color:white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .slide1-pos
 {
 	margin-top:-17px;
@@ -340,4 +341,21 @@ a.autolinker {
 .slide2-pos
 {
 	margin-top:-25px;
+}
+.img-profile
+{
+	width:125px;
+	height:125px;
+	position:absolute;
+	margin-left:33%;
+	margin-top:-30%;
+	border-radius: 50%;
+}
+.profile-modal-card
+{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.profile-modal-text
+{
+	color:#eb5b78 !important;
 }
