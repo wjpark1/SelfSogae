@@ -25,6 +25,7 @@ angular.module('starter.controllers', [])
     $state.go('selected');
   }
 })
+<<<<<<< HEAD
 
 .controller('chatboxCtrl', function($scope,$timeout,$interval,$state,$ionicPlatform,$ionicScrollDelegate,socket) {
 
@@ -118,6 +119,8 @@ socket.on('new_message',function(data){
  
 })
 
+=======
+>>>>>>> ad433720832c052647483795029d588d5cbbc041
 .controller('homeCtrl', function($scope,$state,$ionicPlatform, $ionicModal) {
   $ionicPlatform.ready(function() {
             if(window.StatusBar){
