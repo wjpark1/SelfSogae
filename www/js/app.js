@@ -67,7 +67,8 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         url: "/match",
         views: {
           'match-tab': {
-            templateUrl: "templates/match.html"
+            templateUrl: "templates/match.html",
+            controller: "matchCtrl"
           }
         }
       })
@@ -83,11 +84,29 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         url: "/profile",
         views: {
           'profile-tab': {
-            templateUrl: "templates/profile.html"
+            templateUrl: "templates/profile.html",
+            controller: 'profileCtrl'
           }
         }
       })
+     
+      .state('settings',{
+        url:'/settings',
+        templateUrl:'templates/settings.html'
+      })
+      .state('terms',{
+        url:'/terms',
+        templateUrl:'templates/terms.html'
+      })
       ;
-      $urlRouterProvider.otherwise('login');
+      $urlRouterProvider.otherwise('/settings');
 })
+.filter('nl2br', ['$filter',
+  function($filter) {
+    return function(data) {
+      if (!data) return data;
+      return data.replace(/\n\r?/g, '<br />');
+    };
+  }
+]);
 

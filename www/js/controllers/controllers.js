@@ -27,7 +27,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('chatboxCtrl', function($scope,$state,$ionicPlatform,$ionicScrollDelegate,socket) {
- var x = 1; 
+// var x = 1; 
 socket.emit("join_room",{'room':"temp"});
 var room = "temp";
     // var auth;
@@ -37,17 +37,16 @@ var room = "temp";
     //     auth = true;
     //   }
     // });
-  $scope.chat="";
+  $scope.textbox="";
+ // $scope.input.message="";
 
-  $scope.messages = [{
-   type:"",
-    text:""
-  }];
- $scope.sendMessage = function() {
+  $scope.messages = [];
+ $scope.sendMessage= function() {
         // if(auth){
+          console.log($scope.textbox);
      
-         $scope.messages.push({type:"0",text:$scope.chat});  
-          socket.emit('chatting',{"message":$scope.chat});
+         $scope.messages.push({type:"0",text:$scope.textbox});  
+          socket.emit('chatting',{"message":$scope.textbox});
           console.log($scope.messages);
         // }
   }
@@ -121,6 +120,19 @@ socket.on('new_message',function(data){
         template: 'hello word'
       });
   };
+})
+
+.controller('matchCtrl',function($scope,$ionicSlideBoxDelegate) {
+
+  $scope.navSlide = function(index){
+    $ionicSlideBoxDelegate.slide(index,200);
+  }
+})
+
+.controller('profileCtrl',function($scope,$state){
+  $scope.Edit=function(){
+     $state.go('details');
+  }
 })
 
 .controller('SplashScreenCtrl', ['$scope', '$state', '$timeout',
