@@ -1,0 +1,60 @@
+<ion-view>
+	<div class="card full1 margin0 profile-modal-card">
+		<label class="item text-color full1" style="text-align:center;"><strong>Settings</strong></label>
+	</div>
+	<div class="list" style="margin-top:10%;">
+		<div class="item item-divider">
+		    General Settings
+		</div>
+	  	<label class = "item item-select">
+			<div class = "input-label">
+				Gender
+			</div>
+			<select>
+					<option selected>Only Men</option>
+					<option>Only Women</option>
+					<option>Men and Women</option>
+			</select>
+		</label>
+		<div class="item range">
+			Maximum Distance
+		  	<input type="range" name="volume">
+		</div>
+		<div class="item range">
+			Age
+		  	<input type="range" name="volume">
+		</div>
+		<div class="item item-divider">
+		    Notifications
+		</div>
+		<div class="item item-toggle">
+			Messages
+			<label class="toggle toggle-assertive">
+				<input type="checkbox">
+				<div class="track">
+					<div class="handle"></div>
+				</div>
+			</label>
+		</div>
+		<div class="item item-toggle">
+			New Matches
+			<label class="toggle toggle-assertive">
+				<input type="checkbox">
+				<div class="track">
+					<div class="handle"></div>
+				</div>
+			</label>
+		</div>
+		<div class="item item-divider">
+		    Contact Us
+		</div>
+		<a class="item" href="#">
+		    Help & Support
+		</a>
+
+	</div>
+	<button class="button button-large button-color" ui-sref='home.profile'>
+	  Done
+	</button>
+
+</ion-view>
