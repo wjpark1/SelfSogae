@@ -1,6 +1,6 @@
 angular.module('starter.chatControllers', [])
 
-.controller('chatboxCtrl', function($scope,$state,$ionicPlatform,$ionicScrollDelegate,socket) {
+.controller('chatboxCtrl', function($scope,$state,$ionicPlatform,$timeout,$interval,$ionicScrollDelegate,socket) {
 // var x = 1; 
 socket.emit("join_room",{'room':"temp"});
 var room = "temp";
@@ -63,32 +63,6 @@ var room = "temp";
         }, 0);
         // }
   }
-socket.on('new_message',function(data){
-
-  //var x = data.body+"aaya hai";
-    console.log(data.body+"aaya hai");
-    $scope.messages.push({type:"1",text:data.body});
-   // console.log($scope.messages);
-       $timeout(function() {
-          viewScroll.scrollBottom();
-        }, 0);
- });
- 
-  console.log("chat is running");
-  console.log(socket);
- // $scope.chat={
- //  room:"",
- //  message:""
- // };
- // $scope.abcd=function(){
- //  socket.emit('chat',{'room':$scope.chat.room,'message':$scope.chat.message});
- //  console.log($scope.chat.room);
- // };
- // $scope.abcd2=function(){
- //  socket.emit("joinroom",{'room':$scope.chat.room});  
- // };
- 
-
 $scope.onFocusFun = function(){
   socket.emit('typing',{'username':"shubham"});
 }
@@ -96,14 +70,16 @@ $scope.onFocusFun = function(){
 $scope.onBlurFun = function(){
   socket.emit('stop-typing',{'username':"shubham"});
 }
-
 socket.on('new_message',function(data){
+
+ 
     console.log(data.body+"aaya hai");
     $scope.messages.push({type:"1",text:data.body});
-    console.log($scope.messages);
-      
+       $timeout(function() {
+          viewScroll.scrollBottom();
+        }, 0);
  });
-
+ 
 socket.on('typing',function(data) {
   console.log(data.body+"\tis typing");
 });
