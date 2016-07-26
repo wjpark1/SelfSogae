@@ -99,7 +99,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         templateUrl:'templates/terms.html'
       })
       ;
-      $urlRouterProvider.otherwise('/home/match');
+      $urlRouterProvider.otherwise('/home/profile');
 })
 .filter('nl2br', ['$filter',
   function($filter) {

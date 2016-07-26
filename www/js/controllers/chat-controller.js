@@ -65,7 +65,6 @@ var room = "temp";
         }, 0);
         // }
   }
-<<<<<<< HEAD
 socket.on('new_message',function(data){
 
   //var x = data.body+"aaya hai";
@@ -94,8 +93,7 @@ socket.on('new_message',function(data){
  // };
  
 
-=======
->>>>>>> 74f0e781954ec09220ee6ecb4dec0041a88588dc
+
 $scope.onFocusFun = function(){
   socket.emit('typing',{'username':"shubham"});
 }
@@ -103,22 +101,7 @@ $scope.onFocusFun = function(){
 $scope.onBlurFun = function(){
   socket.emit('stop-typing',{'username':"shubham"});
 }
-<<<<<<< HEAD
 
-
-
-=======
-socket.on('new_message',function(data){
-
- 
-    console.log(data.body+"aaya hai");
-    $scope.messages.push({type:"1",text:data.body});
-       $timeout(function() {
-          viewScroll.scrollBottom();
-        }, 0);
- });
- 
->>>>>>> 74f0e781954ec09220ee6ecb4dec0041a88588dc
 socket.on('typing',function(data) {
   console.log(data.body+"\tis typing");
 });
