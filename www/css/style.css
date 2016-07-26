@@ -4,6 +4,27 @@
 	background: url(../img/back3.jpg);
 
 }
+
+.cardNotify h2{
+		padding: 2px;
+	}
+
+	
+.cardNotify .btnArea{
+		float:right;
+		padding-right:50px;
+		padding-top:5px;
+		padding-bottom:5px;
+
+		
+	}
+.btnArea .accbtn{
+			margin-right:10px;
+		}
+.tabs .tab-item .badge.badgeColor{
+	background-color:white;
+	color:#eb5b78;
+}
 .marginTop{
 	margin-top: 12%;
 }

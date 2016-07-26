@@ -22,10 +22,10 @@ angular.module('starter.controllers', [])
             }
   });*/
   $scope.SignUp=function(){
-    $state.go('selected');
+    $state.go('home.match');
   }
 })
-.controller('homeCtrl', function($scope,$state,$ionicPlatform, $ionicModal) {
+.controller('homeCtrl', function($scope,$state,$ionicPlatform,$rootScope, $ionicModal) {
   $ionicPlatform.ready(function() {
             if(window.StatusBar){
     window.StatusBar.overlaysWebView(false);
@@ -57,7 +57,18 @@ angular.module('starter.controllers', [])
   $scope.viewProfile = function() {
     $scope.modal.show();
   };
+  $rootScope.data=3;
 
+
+    
+
+})
+.controller('notifcationsCtrl', function($scope,$rootScope) {
+$scope.$on('$ionicView.enter', function() {
+          $rootScope.data=0;
+     
+    });
+   
 })
 
 .controller('infoCtrl', function($scope,$ionicSlideBoxDelegate) {

@@ -80,6 +80,15 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
           }
         }
       })
+      .state('home.notifications', {
+        url: "/notifications",
+        views: {
+          'notifications-tab': {
+            templateUrl: "templates/notifications.html",
+            controller: "notifcationsCtrl"
+          }
+        }
+      })
       .state('home.profile', {
         url: "/profile",
         views: {
