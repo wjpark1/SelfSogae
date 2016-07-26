@@ -22,7 +22,7 @@ angular.module('starter.controllers', [])
             }
   });*/
   $scope.SignUp=function(){
-    $state.go('selected');
+    $state.go('home.match');
   }
 })
 .controller('homeCtrl', function($scope,$state,$ionicPlatform, $ionicModal) {
@@ -80,7 +80,7 @@ angular.module('starter.controllers', [])
 
 .controller('profileCtrl',function($scope,$state){
   $scope.Edit=function(){
-     $state.go('details');
+     $state.go('firstSignup');
   }
 })
 
