@@ -76,6 +76,7 @@ socket.on('new_message',function(data){
  
 })
 
+
 .controller('homeCtrl', function($scope,$state,$ionicPlatform, $ionicModal) {
   $ionicPlatform.ready(function() {
             if(window.StatusBar){

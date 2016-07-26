@@ -1,4 +1,13 @@
 /* Empty. Add your own CSS if you like */
+.backImage{
+
+	background: url(../img/back3.jpg);
+
+}
+.marginTop{
+	margin-top: 12%;
+}
+
 .login{
 	background: url(../img/SplashGrey1.jpg);
 	background-repeat: no-repeat;
@@ -133,7 +142,7 @@ background-color: #eb5b78 !important;
 
 .bar-footer textarea {
   resize: none;
-  height: 25px;
+  height: 35px;
 }
 
 /* fixes an ios bug bear */
@@ -220,7 +229,7 @@ img.profile-pic.right {
 .chat-bubble.left {
   background-color: #e6e5eb;
   float: left;
-  margin-left: 55px;
+  margin-left: 15px;
 }
 
 .chat-bubble.left:before {
@@ -230,14 +239,14 @@ img.profile-pic.right {
 }
 
 .chat-bubble.right {
-  background-color: #158ffe;
+  background-color: #fce8ec;
   color: #fff;
   float: right;
-  margin-right: 55px;
+  margin-right: 15px;
 }
 
 .chat-bubble.right:before {
-  background-color: #158ffe;
+  background-color: #fce8ec;
   right: 10px;
   -webkit-transform: rotate(118deg) skew(-5deg);
 }
@@ -358,4 +367,11 @@ a.autolinker {
 .profile-modal-text
 {
 	color:#eb5b78 !important;
+}
+.chat-header{
+	background-color: #eb5b78;
+
+}
+.header-content{
+	color: white;
 }

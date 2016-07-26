@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','starter.loginControllers','starter.chat-services','btford.socket-io'])
+angular.module('starter', ['ionic', 'starter.controllers','starter.loginControllers','starter.chatControllers','starter.chat-services','btford.socket-io'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -99,8 +99,12 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         templateUrl:'templates/terms.html'
       })
       ;
+<<<<<<< HEAD
     $urlRouterProvider.otherwise('/chatbox');
 
+=======
+      $urlRouterProvider.otherwise('/home/match');
+>>>>>>> 82db81221d3bd46ea6a4f29550f56992e1b693d5
 })
 .filter('nl2br', ['$filter',
   function($filter) {
