@@ -1,6 +1,6 @@
 angular.module('starter.chatControllers', [])
 
-.controller('chatboxCtrl', function($scope,$state,$ionicPlatform,$ionicScrollDelegate,socket) {
+.controller('chatboxCtrl', function($scope,$state,$timeout,$ionicPlatform,$interval,$ionicScrollDelegate,socket) {
 // var x = 1; 
 socket.emit("join_room",{'room':"temp"});
 var room = "temp";
@@ -56,7 +56,7 @@ var room = "temp";
           socket.emit('chatting',{"message":$scope.textbox});
           localStorage.data=JSON.stringify($scope.messages);
 
-        console.log(localStorage.data);
+      //  console.log(localStorage.data);
          $scope.textbox='';
           $timeout(function() {
           viewScroll.scrollBottom();
@@ -66,8 +66,10 @@ var room = "temp";
 socket.on('new_message',function(data){
 
   //var x = data.body+"aaya hai";
-    console.log(data.body+"aaya hai");
+   // console.log(data.body+"aaya hai");
     $scope.messages.push({type:"1",text:data.body});
+    localStorage.data=JSON.stringify($scope.messages);
+
    // console.log($scope.messages);
        $timeout(function() {
           viewScroll.scrollBottom();
@@ -97,12 +99,7 @@ $scope.onBlurFun = function(){
   socket.emit('stop-typing',{'username':"shubham"});
 }
 
-socket.on('new_message',function(data){
-    console.log(data.body+"aaya hai");
-    $scope.messages.push({type:"1",text:data.body});
-    console.log($scope.messages);
-      
- });
+
 
 socket.on('typing',function(data) {
   console.log(data.body+"\tis typing");

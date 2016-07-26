@@ -10,17 +10,26 @@
  				</span>
  				</div>
  			</div>-->
-
-        <ion-view id="userMessagesView"
-          cache-view="false" 
-          view-title="<i class='icon ion-chatbubble user-messages-top-icon'></i>">
+<ion-view id="userMessagesView" cache-view="false" class="backImage" style="">
         
-       <ion-nav-bar class="bar-positive" no-tap-scroll="false">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>
-          <ion-content has-bouncing="true" class="has-header has-footer" 
-              delegate-handle="userMessageScroll">
+    <div class="bar bar-header chat-header ">
+  <button class="button button-icon icon ion-chevron-left header-content" ui-sref="home.chat"></button>
+   	<!-- <a class="item-avatar" href="#">
+     
+    </a> -->
+  <h1 class="title header-content item-avatar"> <img src="img/profile1.png" style="margin-left:8%;margin-top:-4%;">Ajit Jain</h1>
+  <button class="button button-icon icon ion-android-more-vertical header-content"></button>
+</div>
+       <!--<ion-header-bar>
+
+      			<button class="button button-icon icon ion-chevron-left"></button>
+      		<ion-nav-title>
+      		</ion-nav-title>
+      	</ion-header-bar-->
+    
+ 
+    <ion-content has-bouncing="true" class="has-header has-footer" 
+              delegate-handle="userMessageScroll" >
             
               <div ng-repeat="message in messages track by $index" class="message-wrapper">
                  <!-- on-hold="onMessageHold($event, $index, message)"-->

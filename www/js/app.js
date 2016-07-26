@@ -99,7 +99,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         templateUrl:'templates/terms.html'
       })
       ;
-      $urlRouterProvider.otherwise('/chatbox');
+      $urlRouterProvider.otherwise('/home/chat');
 })
 .filter('nl2br', ['$filter',
   function($filter) {
