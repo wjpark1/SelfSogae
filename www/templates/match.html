@@ -2,8 +2,10 @@
 	<ion-content>
 		<ion-slide-box show-pager="false" class="slide1-pos" ng-repeat="data in dataset">
 		    <ion-slide>
-				<div class="card match-card-back">
-			  		<div class="match-background" style="background: url({{data.picture}});" ng-click="viewProfile(data)"></div>
+				<div class="list card match-card-back">
+					<div class="item item-image">
+						<img src="{{data.picture}}" ng-click="viewProfile(data)">
+					</div>
 			      	<div class="row" style="height:50px;">
 				      	<div class="col col-60">
 				      		<h3>{{data.name}}</h3>
