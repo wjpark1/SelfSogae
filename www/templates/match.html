@@ -5,13 +5,13 @@
 				<div class="card match-card-back">
 			  		<div class="match-background" style="background: url({{data.picture}});" ng-click="viewProfile(data)"></div>
 			      	<div class="row" style="height:50px;">
-				      	<div class="col">
+				      	<div class="col col-60">
 				      		<h3>{{data.name}}</h3>
 				      	</div>
-				      	<div class="col">
+				      	<div class="col col-20">
 					      	<h5>Age</h5>
 				      	</div>
-				      	<div class="col">
+				      	<div class="col col-20">
 			        		<a class="button button-icon icon ion-ios-heart-outline" ng-click="toggleIcon($event, 'ion-ios-heart', data.username)" ></a>
 				      	</div>
 			      	</div>
