@@ -64,6 +64,7 @@ var room = "temp";
           viewScroll.scrollBottom();
         }, 0);
         // }
+
   };
 socket.on('new_message',function(data){
 

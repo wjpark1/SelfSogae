@@ -1,20 +1,26 @@
 <ion-view view-title="Match">
 	<ion-content>
-		<ion-slide-box show-pager="false" class="slide1-pos">
+		<ion-slide-box show-pager="false" class="slide1-pos" ng-repeat="data in dataset">
 		    <ion-slide>
-				<div class="card match-card-back">
-			  		<div class="match-background" ng-click="viewProfile()"></div>
-			      	<div class="row" style="height:50px;">
-				      	<div class="col">
-				      		<h3>Name</h3>
-				      	</div>
-				      	<div class="col">
-					      	<h5>Age</h5>
-				      	</div>
-				      	<div class="col">
-			        		<a class="button button-icon icon ion-ios-heart-outline" ng-click="toggleIcon($event, 'ion-ios-heart')" ></a>
-				      	</div>
-			      	</div>
+				<div class="list card match-card-back">
+					<div class="item item-image">
+						<img src="{{data.picture}}" ng-click="viewProfile(data)">
+						<div class="card-description">
+							<div class="row" style="height:50px;">
+						      	<div class="col col-60">
+						      		<h3>{{data.name}}</h3>
+						      	</div>
+						      	<div class="col col-20">
+							      	<h5>Age</h5>
+						      	</div>
+						      	<div class="col col-20">
+					        		<a class="button button-icon icon ion-ios-heart-outline" ng-click="toggleIcon($event, 'ion-ios-heart', data.username)" ></a>
+						      	</div>
+					      	</div>
+						</div>
+					</div>
+
+			      	
 			  	</div>
 		    </ion-slide>
 			<ion-slide>
@@ -25,7 +31,7 @@
 								<h3>Name: </h3>
 							</div>
 							<div class="col">
-								<h3>Akash</h3>
+								<h3>{{data.name}}</h3>
 							</div>
 						</div>
 						<div class="row">
@@ -33,7 +39,7 @@
 								<h3>Gender: </h3>
 							</div>
 							<div class="col">
-								<h3>Male</h3>
+								<h3>{{data.gender}}</h3>
 							</div>
 						</div>
 						<div class="row">
@@ -41,7 +47,7 @@
 								<h3>Height: </h3>
 							</div>
 							<div class="col">
-								<h3>183 cms</h3>
+								<h3>{{data.height}}cms</h3>
 							</div>
 						</div>
 						<div class="row">
@@ -49,7 +55,7 @@
 								<h3>Religion: </h3>
 							</div>
 							<div class="col">
-								<h3>Hindu</h3>
+								<h3>{{data.religion}}</h3>
 							</div>
 						</div>
 						<div class="row">
@@ -57,77 +63,14 @@
 								<h3>Occupation: </h3>
 							</div>
 							<div class="col">
-								<h3>Engineer</h3>
+								<h3>{{data.occupation}}</h3>
 							</div>
 						</div>
 					</div>
 				</div>
 		    </ion-slide>
 		</ion-slide-box>
-		<ion-slide-box show-pager="false" class="slide2-pos">
-		    <ion-slide>
-				<div class="card match-card-back">
-			  		<div class="match-background1" ng-click="viewProfile()"></div>
-			      	<div class="row" style="height:50px;">
-				      	<div class="col">
-				      		<h3>Name</h3>
-				      	</div>
-				      	<div class="col">
-					      	<h5>Age</h5>
-				      	</div>
-				      	<div class="col">
-			        		<a class="button button-icon icon ion-ios-heart-outline" ng-click="toggleIcon($event, 'ion-ios-heart')" ></a>
-				      	</div>
-			      	</div>
-			  	</div>
-		    </ion-slide>
-			<ion-slide>
-				<div class="card match-card-back">
-					<div>
-						<div class="row">
-							<div class="col">
-								<h3>Name: </h3>
-							</div>
-							<div class="col">
-								<h3>Akash</h3>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col">
-								<h3>Gender: </h3>
-							</div>
-							<div class="col">
-								<h3>Male</h3>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col">
-								<h3>Height: </h3>
-							</div>
-							<div class="col">
-								<h3>183 cms</h3>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col">
-								<h3>Religion: </h3>
-							</div>
-							<div class="col">
-								<h3>Hindu</h3>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col">
-								<h3>Occupation: </h3>
-							</div>
-							<div class="col">
-								<h3>Engineer</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-		    </ion-slide>
-		</ion-slide-box>
+		
     </ion-content>
 	  	<button class="button button-full  button-color ion-ios-heart" style="margin-top:572px;">
 		  <strong>Buy more Hearts</strong>
