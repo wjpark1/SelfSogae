@@ -64,7 +64,8 @@ var room = "temp";
           viewScroll.scrollBottom();
         }, 0);
         // }
-  }
+
+  };
 socket.on('new_message',function(data){
 
   //var x = data.body+"aaya hai";
@@ -92,7 +93,6 @@ socket.on('new_message',function(data){
  //  socket.emit("joinroom",{'room':$scope.chat.room});  
  // };
  
-
 
 $scope.onFocusFun = function(){
   socket.emit('typing',{'username':"shubham"});
