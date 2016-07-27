@@ -62,7 +62,12 @@ angular.module('starter.chatControllers', [])
         $timeout(function() {
         viewScroll.scrollBottom();
         }, 0);
+
   }
+
+
+        // }
+};
 
 socket.on('new_message',function(data){
 
@@ -84,6 +89,10 @@ $scope.onFocusFun = function(){
 $scope.onBlurFun = function(){
   socket.emit('stop-typing',{'username':"shubham"});
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 160cc9c01045451de2555e0ad5b3363cb2e197df
 socket.on('typing',function(data) {
   console.log(data.body+"\tis typing");
 });

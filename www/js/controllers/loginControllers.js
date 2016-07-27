@@ -34,16 +34,20 @@ angular.module('starter.loginControllers', ['ngStorage', 'ngCordova'])
                 $http.post("http://f259ef4b.ngrok.io/api/v1/user/auth", user, { headers: { 'Content-Type': 'application/json' } }).
 				then(function(response) {
    					 console.log(response);
-   					 alert(response);
-   					 $location.path("/firstSignup"); 
+   					 if(response.data.success === true){
+                         $localStorage.serverToken = response.data.token;
+                         if(response.data.policy_flag === flase){
+                         	 $location.path("/firstSignup");
+                         } else{
+                         	$location.path("/home/match");
+                         }     
+   					 }
 				}, function(error) {
-  					  alert("There was a problem getting your profile.  Check the logs for details.");
+  					  alert("Something is not right.. please try again.!");
     					console.log(error);
 				});
-
-                
             }, function(error) {
-                alert("There was a problem getting your profile.  Check the logs for details.");
+                alert("There was a problem getting your profile..");
                 console.log(error);
             });
                  // if sucessfull redirect to detail page

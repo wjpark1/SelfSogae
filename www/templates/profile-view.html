@@ -6,14 +6,14 @@
     </div>
   </ion-header-bar>
   <ion-content>
-    <div class="card profile-modal-card">
-      <div class="row">
-        <img src="../img/download.jpg" class="img-modal">
+    <div class="list card profile-modal-card">
+      <div class="item item-image">
+        <img src="{{data.picture}}">
       </div>
       <div class="profile-modal-text">
         <div class="row">
           <div class="col">
-            <h3>Akash</h3>
+            <h3>{{data.name}}</h3>
           </div>
           <div class="col">
             <h3>20</h3>
@@ -21,18 +21,18 @@
         </div>
         <div class="row">
           <div class="col">
-            <h3>Male</h3>
+            <h3>{{data.gender}}</h3>
           </div>
           <div class="col">
-            <h3>183 cms</h3>
+            <h3>{{data.height}}cms</h3>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <h3>Hindu</h3>
+            <h3>{{data.religion}}</h3>
           </div>
           <div class="col">
-            <h3>S/W Developer</h3>
+            <h3>{{data.occupation}}</h3>
           </div>
         </div>
       </div>
