@@ -1,40 +1,24 @@
 angular.module('starter.chatControllers', [])
 
 
+.controller('chatListCtrl',function($scope,$state,chatRoomList){
+   chatRoomList.getChatList().then(function(data){
+      $scope.chatRoomList = data.chat_rooms;
+      localStorage.chatRoomList = JSON.stringify(data.chat_rooms);
+      console.log($scope.chatRoomList);
+   })    
+})
+
 .controller('chatboxCtrl', function($scope,$state,$ionicPlatform,$timeout,$interval,$ionicScrollDelegate,socket) {
-
-// var x = 1; 
-socket.emit("join_room",{'room':"temp"});
-var room = "temp";
-    // var auth;
-    // socket.emit('authentication',{token:"",userId:""});
-    // socket.on('authenticated',function(body){
-    //   if(body.success == true){
-    //     auth = true;
-    //   }
-    // });
-     function getMessages() {
-      // the service is mock but you would probably pass the toUser's GUID here
-     
-        $scope.messages =JSON.parse(localStorage.data);
-        console.log($scope.messages);
-
-        $timeout(function() {
-          viewScroll.scrollBottom();
-        }, 0);
-      
-    }
-    var viewScroll = $ionicScrollDelegate.$getByHandle('userMessageScroll');
-  $scope.textbox="";
- // $scope.input.message="";
-    var footerBar; // gets set in $ionicView.enter
-    var scroller;
-    var txtInput; // ^^^
-
+    var auth;
+    var roomId=$stateParams.id;
+    var chatList = JSON.parse(localStorage.chatRoomList);
+    var roomId=$stateParams.id;
     $scope.$on('$ionicView.enter', function() {
+      console.log($stateParams);
+      socket.emit("join_room",{'room':roomId});
       console.log('UserMessages $ionicView.enter');
-
-     getMessages();
+      getMessages();
       
       $timeout(function() {
         footerBar = document.body.querySelector('#userMessagesView .bar-footer');
@@ -43,37 +27,48 @@ var room = "temp";
       }, 0);
 
       messageCheckTimer = $interval(function() {
-        // here you could check for new messages if your app doesn't use push notifications or user disabled them
-      }, 20000);
+        }, 20000);
+      });
+    
+    socket.emit('authentication',{token:"",userId:""});
+    socket.on('authenticated',function(body){
+      if(body.success == true){
+        auth = true;
+        console.log(auth);
+      }
     });
-
-
-
-  $scope.messages = [];
- $scope.sendMessage= function() {
-        // if(auth){
-          console.log($scope.textbox);
-     
-         $scope.messages.push({type:"0",text:$scope.textbox});  
-          socket.emit('chatting',{"message":$scope.textbox});
-          localStorage.data=JSON.stringify($scope.messages);
-
-      //  console.log(localStorage.data);
-         $scope.textbox='';
-          $timeout(function() {
+     function getMessages() {
+        $scope.messages =JSON.parse(localStorage.roomId);
+        console.log($scope.messages);
+        $timeout(function() {
           viewScroll.scrollBottom();
         }, 0);
-        // }
+      
+    }
+    var viewScroll = $ionicScrollDelegate.$getByHandle('userMessageScroll');
+    $scope.textbox="";
+ // $scope.input.message="";
+    var footerBar; // gets set in $ionicView.enter
+    var scroller;
+    var txtInput; // ^^^
+    $scope.messages = [];
+    $scope.sendMessage= function() {
+        console.log($scope.textbox);
+        $scope.messages.push({type:"0",text:$scope.textbox});  
+        socket.emit('chatting',{"message":$scope.textbox});
+        localStorage.setItem('roomId',JSON.stringify($scope.messages));
+          // localStorage.roomId=JSON.stringify($scope.messages);
+        $scope.textbox='';
+        $timeout(function() {
+        viewScroll.scrollBottom();
+        }, 0);
   }
-<<<<<<< HEAD
+
 socket.on('new_message',function(data){
 
-  //var x = data.body+"aaya hai";
-   // console.log(data.body+"aaya hai");
     $scope.messages.push({type:"1",text:data.body});
-    localStorage.data=JSON.stringify($scope.messages);
-
-   // console.log($scope.messages);
+    localStorage.setItem('roomId',JSON.stringify($scope.messages));
+    // localStorage.roomId=JSON.stringify($scope.messages);
        $timeout(function() {
           viewScroll.scrollBottom();
         }, 0);
@@ -81,21 +76,7 @@ socket.on('new_message',function(data){
  
   console.log("chat is running");
   console.log(socket);
- // $scope.chat={
- //  room:"",
- //  message:""
- // };
- // $scope.abcd=function(){
- //  socket.emit('chat',{'room':$scope.chat.room,'message':$scope.chat.message});
- //  console.log($scope.chat.room);
- // };
- // $scope.abcd2=function(){
- //  socket.emit("joinroom",{'room':$scope.chat.room});  
- // };
- 
 
-=======
->>>>>>> 74f0e781954ec09220ee6ecb4dec0041a88588dc
 $scope.onFocusFun = function(){
   socket.emit('typing',{'username':"shubham"});
 }
@@ -103,22 +84,6 @@ $scope.onFocusFun = function(){
 $scope.onBlurFun = function(){
   socket.emit('stop-typing',{'username':"shubham"});
 }
-<<<<<<< HEAD
-
-
-
-=======
-socket.on('new_message',function(data){
-
- 
-    console.log(data.body+"aaya hai");
-    $scope.messages.push({type:"1",text:data.body});
-       $timeout(function() {
-          viewScroll.scrollBottom();
-        }, 0);
- });
- 
->>>>>>> 74f0e781954ec09220ee6ecb4dec0041a88588dc
 socket.on('typing',function(data) {
   console.log(data.body+"\tis typing");
 });
@@ -127,4 +92,10 @@ socket.on('stop-typing',function(data){
   console.log(data.body+"\tis stop typing");
 });
 
-})
+$scope.$on('$ionicView.beforeLeave',function(){
+    socket.emit("leave_room",{'room':roomId});
+});
+// $scope.$on('$ionicView.leave',function(){
+
+// })
+});

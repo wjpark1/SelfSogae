@@ -76,7 +76,8 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         url: "/chat",
         views: {
           'chat-tab': {
-            templateUrl: "templates/chat.html"
+            templateUrl: "templates/chat.html",
+            controller:"chatListCtrl"
           }
         }
       })

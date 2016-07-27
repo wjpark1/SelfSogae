@@ -9,3 +9,12 @@ angular.module('starter.chat-services',[])
 
   return mySocket;
 })
+
+.factory('chatRoomList',function($http) {
+
+	return {
+		getChatList : function() {
+			return $http.get('https://link_for_the_list');
+		}
+	}
+});
