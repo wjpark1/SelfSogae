@@ -121,9 +121,6 @@ background-color: #eb5b78 !important;
 
 .img-cover
 {
-	background: url(../img/slide1.jpg);
-	width: 95%;
-	height: 300px;
 	position:relative;
 	border-radius: 10px 50px;
 	margin-top: 15%;
