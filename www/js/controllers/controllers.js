@@ -110,7 +110,7 @@ $scope.$on('$ionicView.enter', function() {
 
 .controller('profileCtrl',function($scope,$state){
   $scope.Edit=function(){
-     $state.go('firstSignup');
+     $state.go('editProfile');
   }
 })
 

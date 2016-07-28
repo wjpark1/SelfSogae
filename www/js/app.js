@@ -103,12 +103,16 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         url:'/settings',
         templateUrl:'templates/settings.html'
       })
+      .state('editProfile',{
+        url:'/editProfile',
+        templateUrl:'templates/editProfile.html'
+      })
       .state('terms',{
         url:'/terms',
         templateUrl:'templates/terms.html'
       })
       ;
-      $urlRouterProvider.otherwise('/home/match');
+      $urlRouterProvider.otherwise('/terms');
 })
 .filter('nl2br', ['$filter',
   function($filter) {
