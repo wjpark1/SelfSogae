@@ -16,6 +16,8 @@ angular.module('starter.chatControllers', [])
 
     var auth;
     var x = $stateParams.id;
+    $scope.name = $stateParams.name;
+    $scope.picture = $stateParams.picture;
     console.log(x);
     var roomId=$stateParams.id;
     console.log("roomId"+roomId);
