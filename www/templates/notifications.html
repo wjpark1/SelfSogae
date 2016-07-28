@@ -1,0 +1,24 @@
+<ion-view view-title="Notifications">
+	<ion-content>
+	<div class ="requests" ng-repeat = "chatRoom in chatRoomList">
+			<div class="list card cardNotify " style="width:100%;margin:0px;background-color:#F08080">
+			
+		    <div class="item item-avatar shade" ng-click="viewProfile()">
+		      <img src="../img/profile1.png">
+		      <h2><strong>Venkman likes you</strong></h2>
+		      <h2>Age : 20</h2>
+		      <h2>from : ludhiana</h2>
+		      
+		    </div>
+		<div class="btnArea">
+			 <button class="button button-icon ion ion-checkmark accbtn" style="background-color:lightgreen" ng-click="acceptFunc()">
+ 					Accept
+			</button>
+			<button class="button button-icon ion ion-close" style="background-color:red;opacity:0.6" ng-click="rejectFun()">
+  					Reject
+			</button>
+		</div>
+		</div>
+	</div>
+	</ion-content>
+</ion-view>

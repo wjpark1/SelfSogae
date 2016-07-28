@@ -12,3 +12,4 @@ temp/
 *.swp
 .idea/vcs.xml
 *.name
+.idea/workspace.xml

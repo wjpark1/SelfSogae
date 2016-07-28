@@ -45,7 +45,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         controller:'infoCtrl'
       })
       .state('chatbox',{
-        url:'/chatbox',
+        url:'/chatbox/:id',
         templateUrl:'templates/chatBox.html',
         controller:'chatboxCtrl'
       })
@@ -74,7 +74,17 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         url: "/chat",
         views: {
           'chat-tab': {
-            templateUrl: "templates/chat.html"
+            templateUrl: "templates/chat.html",
+            controller:"chatListCtrl"
+          }
+        }
+      })
+      .state('home.notifications', {
+        url: "/notifications",
+        views: {
+          'notifications-tab': {
+            templateUrl: "templates/notifications.html",
+            controller: "notifcationsCtrl"
           }
         }
       })
@@ -92,12 +102,17 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         url:'/settings',
         templateUrl:'templates/settings.html'
       })
+      .state('editProfile',{
+        url:'/editProfile',
+        templateUrl:'templates/editProfile.html'
+      })
       .state('terms',{
         url:'/terms',
         templateUrl:'templates/terms.html'
       })
       ;
-      $urlRouterProvider.otherwise('/home/match');
+
+      $urlRouterProvider.otherwise('/home/chat');
 })
 .filter('nl2br', ['$filter',
   function($filter) {
