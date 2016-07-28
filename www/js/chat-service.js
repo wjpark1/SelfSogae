@@ -9,3 +9,11 @@ angular.module('starter.chat-services',[])
 
   return mySocket;
 })
+
+.factory('chatRoomList',function($http) {
+return {
+		getChatList : function() {
+			return $http.get('http://localhost:3000/api/v1/user/chatRoomList/256574931391898',{ params:{format:"json"}});
+		}
+	}
+});
