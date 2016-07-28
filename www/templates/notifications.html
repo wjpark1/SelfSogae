@@ -1,14 +1,28 @@
 <ion-view view-title="Notifications">
 	<ion-content>
-			<div class="list card cardNotify " style="width:100%;margin:0px;background-color:#F08080">
+			<div class="card" style="width:100%;margin:0px;padding:0px;background-color:transparent !important;">
 			
-		    <div class="item item-avatar shade" ng-click="viewProfile()">
-		      <img src="../img/profile1.png">
-		      <h2><strong>Venkman likes you</strong></h2>
-		      <h2>Age : 20</h2>
-		      <h2>from : ludhiana</h2>
+		    <div  class="item item-avatar shade" ng-click="">
+		      <img src="img/profile1.png">
+		      <!--h2 style="font-weight:500"><strong>Venkman likes you</strong></h2>
+		      <h2 style="color:#eb5b78; float:left;font-weight:500">Age : 20</h2>
+		      <h2 style="color:#eb5b78;font-weight:500">from : ludhiana</h2-->
+		        <div class="my-container" style="float:left">
+
+      					<h2 class="row first-row" style="padding-left:5%"><strong>Venkman likes you</strong></h2>
+
+      					<h2 class="row second-row" style="padding-left:5%">Age : 20</h2>
+
+      					<h2 class="row third-row" style="padding-left:5%">from : ludhiana</h2>
+
+  				</div>
 		      
+		      <div class="" style="float:right">
+		      		<button class=" button button-outline button-balanced" style="padding:0px"><i class="ion ion-checkmark"></i></button>
+		      		<button class=" button button-outline button-assertive" style="padding:0px;color:red"><i class="ion ion-close"></i></button>
+		      </div>
 		    </div>
+		   
 
 		   <!-- <div style="float:left;padding:10px">
 		    <button class="button button-outline button-balanced">
@@ -24,14 +38,14 @@
     
 
 		</div-->
-		<div class="btnArea">
+		<!--div class="btnArea">
 			 <button class="button button-icon ion ion-checkmark accbtn" style="background-color:lightgreen">
  					Accept
 			</button>
 			<button class="button button-icon ion ion-close" style="background-color:red;opacity:0.6">
   					Reject
 			</button>
-		</div>
+		</div-->
 		</div>
 	</ion-content>
 </ion-view>

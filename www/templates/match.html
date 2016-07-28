@@ -1,13 +1,13 @@
-<ion-view view-title="Match">
+<ion-view view-title="Match" >
 	<ion-content>
-		<ion-slide-box show-pager="false" class="slide1-pos" ng-repeat="data in dataset">
+		<ion-slide-box style="height:40%; margin-bottom:10%" show-pager="false" class="slide1-pos" ng-repeat="data in dataset">
 		    <ion-slide>
 				<div class="list card match-card-back">
 					<div class="item item-image">
-						<img src="{{data.picture}}" ng-click="viewProfile(data)">
+						<img ng-src="{{data.picture}}" ng-click="viewProfile(data)">
 						<div class="card-description">
 							<div class="row" style="height:50px;">
-						      	<div class="col col-60">
+						      	<div class="col col-60 ">
 						      		<h3>{{data.name}}</h3>
 						      	</div>
 						      	<div class="col col-20">
