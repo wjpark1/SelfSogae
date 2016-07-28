@@ -64,14 +64,14 @@
 						<img src="{{data.picture}}" ng-click="viewProfile(data)">
 						<div class="card-description">
 							<div class="row" style="height:50px;">
-						      	<div class="col col-60">
-						      		<h3>{{data.name}}</h3>
+						      	<div class="col col-50">
+						      		<h2><strong>{{data.name}}</strong></h2>
+						      	</div>
+						      	<div class="col col-30">
+							      	<h4><strong>Age</strong></h4>
 						      	</div>
 						      	<div class="col col-20">
-							      	<h5>Age</h5>
-						      	</div>
-						      	<div class="col col-20">
-					        		<a class="button button-icon icon ion-ios-heart-outline" ng-click="toggleIcon($event, 'ion-ios-heart', data.username)" ></a>
+					        		<a class="button button-icon icon ion-ios-heart-outline icon-pos" ng-click="toggleIcon($event, 'ion-ios-heart', data.username)"></a>
 						      	</div>
 					      	</div>
 						</div>
