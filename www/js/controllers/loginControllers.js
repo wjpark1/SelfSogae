@@ -32,18 +32,23 @@ angular.module('starter.loginControllers', ['ngStorage', 'ngCordova'])
                 //user.birthday = result.data.birthday;
 
                 $http.post("http://f259ef4b.ngrok.io/api/v1/user/auth", user, { headers: { 'Content-Type': 'application/json' } }).
-				then(function(response) {
+				then(function(response) 
+                {
    					 console.log(response);
-   					 if(response.data.success === true){
+   					 if(response.data.success === true)
+                     {
                          $localStorage.serverToken = response.data.token;
-                         if(response.data.policy_flag === flase){
+                         if(response.data.policy_flag === flase)
+                         {
                          	 $location.path("/firstSignup");
-                         } else{
+                         } 
+                         else
+                         {
                          	$location.path("/home/match");
-                         }     
-   					 }
+                        }     
+   				     }
 				}, function(error) {
-  					  alert("Something is not right.. please try again.!");
+  					  alert("login unsuccessful!");
     					console.log(error);
 				});
             }, function(error) {
@@ -52,7 +57,7 @@ angular.module('starter.loginControllers', ['ngStorage', 'ngCordova'])
             });
                  // if sucessfull redirect to detail page
         }, function(error) {                     //handel any error
-            alert("Login unsuccessful.! Please try again.. ");
+            alert("login unsuccessful!!!");
             console.log(error);
         });
 
