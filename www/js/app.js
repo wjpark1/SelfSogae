@@ -45,7 +45,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         controller:'infoCtrl'
       })
       .state('chatbox',{
-        url:'/chatbox',
+        url:'/chatbox/:id',
         templateUrl:'templates/chatBox.html',
         controller:'chatboxCtrl'
       })
@@ -109,7 +109,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         templateUrl:'templates/terms.html'
       })
       ;
-      $urlRouterProvider.otherwise('/home/match');
+      $urlRouterProvider.otherwise('/home/chat');
 })
 .filter('nl2br', ['$filter',
   function($filter) {

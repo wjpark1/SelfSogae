@@ -1,21 +1,32 @@
 angular.module('starter.chatControllers', [])
 
 
-.controller('chatListCtrl',function($scope,$state,chatRoomList){
+.controller('chatListCtrl',function($scope,$state,$stateParams,chatRoomList){
    chatRoomList.getChatList().then(function(data){
-      $scope.chatRoomList = data.chat_rooms;
-      localStorage.chatRoomList = JSON.stringify(data.chat_rooms);
-      console.log($scope.chatRoomList);
-   })    
+    console.log(data);
+      console.log("sh"+data.data.data[0].partner);
+      $scope.chatRoomList = data.data.data;
+      localStorage.chatRoomList = JSON.stringify(data.data.data);
+
+   })
+
 })
 
-.controller('chatboxCtrl', function($scope,$state,$ionicPlatform,$timeout,$interval,$ionicScrollDelegate,socket) {
+.controller('chatboxCtrl', function($scope,$state,$localStorage,$ionicPlatform,$stateParams,$timeout,$interval,$ionicScrollDelegate,socket) {
+    
     var auth;
+    var x = $stateParams.id;
+    console.log(x);
     var roomId=$stateParams.id;
+    console.log("roomId"+roomId);
+    
     var chatList = JSON.parse(localStorage.chatRoomList);
     var roomId=$stateParams.id;
     $scope.$on('$ionicView.enter', function() {
-      console.log($stateParams);
+      $scope.messages = [];
+      if(localStorage.getItem(roomId) == undefined){
+          localStorage.setItem(roomId,"");
+      }
       socket.emit("join_room",{'room':roomId});
       console.log('UserMessages $ionicView.enter');
       getMessages();
@@ -38,7 +49,7 @@ angular.module('starter.chatControllers', [])
       }
     });
      function getMessages() {
-        $scope.messages =JSON.parse(localStorage.roomId);
+        $scope.messages =JSON.parse(localStorage.getItem(roomId));
         console.log($scope.messages);
         $timeout(function() {
           viewScroll.scrollBottom();
@@ -51,13 +62,17 @@ angular.module('starter.chatControllers', [])
     var footerBar; // gets set in $ionicView.enter
     var scroller;
     var txtInput; // ^^^
-    $scope.messages = [];
+    $scope.messages = [{
+      type:"",
+      text:""
+    }];
     $scope.sendMessage= function() {
+        
         console.log($scope.textbox);
+        socket.emit('chatting',{"message":$scope.textbox,"room":roomId});
         $scope.messages.push({type:"0",text:$scope.textbox});  
-        socket.emit('chatting',{"message":$scope.textbox});
-        localStorage.setItem('roomId',JSON.stringify($scope.messages));
-          // localStorage.roomId=JSON.stringify($scope.messages);
+        localStorage.setItem(String(roomId),JSON.stringify($scope.messages));
+        // localStorage.roomId=JSON.stringify($scope.messages);
         $scope.textbox='';
         $timeout(function() {
         viewScroll.scrollBottom();
@@ -67,12 +82,13 @@ angular.module('starter.chatControllers', [])
 
 
         // }
-};
+// };
 
 socket.on('new_message',function(data){
-
+  // $scope.messages_return = [];
+    console.log("message aaya hai");
     $scope.messages.push({type:"1",text:data.body});
-    localStorage.setItem('roomId',JSON.stringify($scope.messages));
+    localStorage.setItem(String(roomId),JSON.stringify($scope.messages));
     // localStorage.roomId=JSON.stringify($scope.messages);
        $timeout(function() {
           viewScroll.scrollBottom();
@@ -89,10 +105,7 @@ $scope.onFocusFun = function(){
 $scope.onBlurFun = function(){
   socket.emit('stop-typing',{'username':"shubham"});
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 160cc9c01045451de2555e0ad5b3363cb2e197df
 socket.on('typing',function(data) {
   console.log(data.body+"\tis typing");
 });
@@ -104,7 +117,4 @@ socket.on('stop-typing',function(data){
 $scope.$on('$ionicView.beforeLeave',function(){
     socket.emit("leave_room",{'room':roomId});
 });
-// $scope.$on('$ionicView.leave',function(){
-
-// })
 });

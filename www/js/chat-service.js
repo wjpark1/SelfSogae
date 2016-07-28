@@ -11,10 +11,9 @@ angular.module('starter.chat-services',[])
 })
 
 .factory('chatRoomList',function($http) {
-
-	return {
+return {
 		getChatList : function() {
-			return $http.get('https://link_for_the_list');
+			return $http.get('https://jsonblob.com/api/57999a06e4b0dc55a4e835cf',{ params:{format:"json"}});
 		}
 	}
 });

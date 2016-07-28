@@ -2,7 +2,6 @@
 	<ion-content>
 		<ion-slide-box show-pager="false" class="slide1-pos" ng-repeat="data in dataset">
 		    <ion-slide>
-<<<<<<< HEAD
 				<div class="card match-card-back">
 			  		<div class="match-background" ng-click="viewProfile()"></div>
 			      	<div class="row" style="height:50px;">
@@ -13,7 +12,7 @@
 					      	<h5>Age</h5>
 				      	</div>
 				      	<div class="col">
-			        		<a class="button button-icon icon ion-ios-heart-outline" ng-click="toggleIcon($event, 'ion-ios-heart');test()" ></a>
+			        		<a class="button button-icon icon ion-ios-heart-outline" ng-click="toggleIcon($event, 'ion-ios-heart', data.username" ></a>
 				      	</div>
 			      	</div>
 			  	</div>
@@ -60,7 +59,6 @@
 							<div class="col">
 								<h3>Engineer</h3>
 							</div>
-=======
 				<div class="list card match-card-back">
 					<div class="item item-image">
 						<img src="{{data.picture}}" ng-click="viewProfile(data)">
@@ -76,7 +74,6 @@
 					        		<a class="button button-icon icon ion-ios-heart-outline" ng-click="toggleIcon($event, 'ion-ios-heart', data.username)" ></a>
 						      	</div>
 					      	</div>
->>>>>>> 160cc9c01045451de2555e0ad5b3363cb2e197df
 						</div>
 					</div>
 
