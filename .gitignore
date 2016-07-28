@@ -10,3 +10,5 @@ temp/
 *.DS_Store
 *.log
 *.swp
+.idea/vcs.xml
+*.name

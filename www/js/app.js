@@ -19,7 +19,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    
+
 
 
   });
@@ -51,16 +51,14 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
       })
       .state('selected',{
         url:'/selected',
-        templateUrl:'templates/SelectedDetails.html',
-        
-        
+        templateUrl:'templates/SelectedDetails.html'
       })
       .state('home',{
         url:'/home',
         abstract: true,
         templateUrl:'templates/home.html',
         controller: 'homeCtrl'
-        
+
       })
 
       .state('home.match', {
@@ -89,7 +87,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
           }
         }
       })
-     
+
       .state('settings',{
         url:'/settings',
         templateUrl:'templates/settings.html'

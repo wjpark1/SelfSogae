@@ -3,7 +3,7 @@ angular.module('starter.chatControllers', [])
 
 .controller('chatboxCtrl', function($scope,$state,$ionicPlatform,$timeout,$interval,$ionicScrollDelegate,socket) {
 
-// var x = 1; 
+// var x = 1;
 socket.emit("join_room",{'room':"temp"});
 var room = "temp";
     // var auth;
@@ -15,14 +15,14 @@ var room = "temp";
     // });
      function getMessages() {
       // the service is mock but you would probably pass the toUser's GUID here
-     
+
         $scope.messages =JSON.parse(localStorage.data);
         console.log($scope.messages);
 
         $timeout(function() {
           viewScroll.scrollBottom();
         }, 0);
-      
+
     }
     var viewScroll = $ionicScrollDelegate.$getByHandle('userMessageScroll');
   $scope.textbox="";
@@ -35,7 +35,7 @@ var room = "temp";
       console.log('UserMessages $ionicView.enter');
 
      getMessages();
-      
+
       $timeout(function() {
         footerBar = document.body.querySelector('#userMessagesView .bar-footer');
         scroller = document.body.querySelector('#userMessagesView .scroll-content');
@@ -53,8 +53,8 @@ var room = "temp";
  $scope.sendMessage= function() {
         // if(auth){
           console.log($scope.textbox);
-     
-         $scope.messages.push({type:"0",text:$scope.textbox});  
+
+         $scope.messages.push({type:"0",text:$scope.textbox});
           socket.emit('chatting',{"message":$scope.textbox});
           localStorage.data=JSON.stringify($scope.messages);
 
@@ -65,7 +65,7 @@ var room = "temp";
         }, 0);
         // }
   }
-<<<<<<< HEAD
+
 socket.on('new_message',function(data){
 
   //var x = data.body+"aaya hai";
@@ -78,7 +78,7 @@ socket.on('new_message',function(data){
           viewScroll.scrollBottom();
         }, 0);
  });
- 
+
   console.log("chat is running");
   console.log(socket);
  // $scope.chat={
@@ -90,12 +90,10 @@ socket.on('new_message',function(data){
  //  console.log($scope.chat.room);
  // };
  // $scope.abcd2=function(){
- //  socket.emit("joinroom",{'room':$scope.chat.room});  
+ //  socket.emit("joinroom",{'room':$scope.chat.room});
  // };
- 
 
-=======
->>>>>>> 74f0e781954ec09220ee6ecb4dec0041a88588dc
+
 $scope.onFocusFun = function(){
   socket.emit('typing',{'username':"shubham"});
 }
@@ -103,22 +101,7 @@ $scope.onFocusFun = function(){
 $scope.onBlurFun = function(){
   socket.emit('stop-typing',{'username':"shubham"});
 }
-<<<<<<< HEAD
 
-
-
-=======
-socket.on('new_message',function(data){
-
- 
-    console.log(data.body+"aaya hai");
-    $scope.messages.push({type:"1",text:data.body});
-       $timeout(function() {
-          viewScroll.scrollBottom();
-        }, 0);
- });
- 
->>>>>>> 74f0e781954ec09220ee6ecb4dec0041a88588dc
 socket.on('typing',function(data) {
   console.log(data.body+"\tis typing");
 });
