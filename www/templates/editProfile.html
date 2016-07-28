@@ -6,7 +6,7 @@
 				<label class="item text-color full1" style="text-align:center;"><strong>SignUp Details</strong></label>
 		</div>
 		<div class="card">
-
+				
 
 				<label class="item text-color"><strong>Love to meet</strong><label style="float:right">{{checkModel.value1}}<label ng-show="checkModel.value1 === 'Male' && checkModel.value2 === 'Female'">&nbsp; &amp; &nbsp;</label>{{ checkModel.value2}}</label></label>
 				<div class="item item-toggle">
@@ -39,7 +39,7 @@
 			   				<div class = "input-label">
 			      				Height
 							</div>
-
+				
 			   				<select>
 			     					<option selected>less than 160cms</option>
 			      					<option>160-165cms</option>
@@ -52,19 +52,19 @@
 
 			     					<option>196-200cms</option>
 			     					<option>More than 200cms</option>
-
-
+			     					
+			      					
 			   				</select>
 					</label>
-
+				
 							<label class = "item item-input item-select">
 			   				<div class = "input-label">
 			      				Religion
 							</div>
-
+				
 			   				<select>
 			     					<option>Buddists</option>
-                    <option selected>Christian</option>
+			      					<option selected>Christian</option>
 			     					<option>Catholic</option>
 			     					<option>Hindu</option>
 			     					<option>Jewish</option>
@@ -74,24 +74,24 @@
 			     					<option>Spiritual But not religious</option>
 			     					<option>Neither Spiritual nor religious</option>
 			     					<option>Other</option>
-
+			      					
 			   				</select>
 							</label>
-
-
-
+						
+					
+							
 							<label class="item item-input">
 			  					<span class="input-label">High School</span>
 			  					<input type="text" class="shade" placeholder=" Enter High School">
 							</label>
-
+				
 							<label class="item item-input">
 			  					<span class="input-label">Bachelors</span>
 			  					<input type="text" class="shade" placeholder=" Enter Bachelors">
 							</label>
-
-
-
+						
+					
+					
 
 		    		<!--</ion-scroll>-->
 		    </div>
@@ -102,7 +102,7 @@
 								<div class="col-50"><ion-checkbox>Photography</ion-checkbox></div>
 								<div class="col-50"><ion-checkbox>Travel</ion-checkbox></div>
 						</div>
-
+						
 						<div class="row">
 							<div class="col-50"><ion-checkbox>Art</ion-checkbox></div>
 							<div class="col-50"><ion-checkbox>Music</ion-checkbox></div>
@@ -116,8 +116,8 @@
 							<div class="col-50"><ion-checkbox>Technology</ion-checkbox></div>
 						</div>
 						<div class="row">
-							<div class="col-51"><ion-checkbox>Cooking/Eating</ion-checkbox></div>
-							<div class="col-49"><ion-checkbox>Gaming</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox>Cooking/Eating</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox>Gaming</ion-checkbox></div>
 						</div>
 						<div class="row">
 							<div class="col-51"><ion-checkbox>Reading/Writing</ion-checkbox></div>
@@ -135,8 +135,8 @@
 	<div class="row">
 		<div class="col-20 full">&nbsp;</div>
 		<div class="col-60">
-		<button class="button button-color full" ng-click="SignUp()">
-  				Submit
+		<button class="button button-color full" ui-sref='home.profile'>
+  			Save
 		</button>
 		</div>
 

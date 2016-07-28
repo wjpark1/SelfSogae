@@ -19,7 +19,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    
+
 
 
   });
@@ -45,22 +45,20 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         controller:'infoCtrl'
       })
       .state('chatbox',{
-        url:'/chatbox',
+        url:'/chatbox/:id:name:picture',
         templateUrl:'templates/chatBox.html',
         controller:'chatboxCtrl'
       })
       .state('selected',{
         url:'/selected',
-        templateUrl:'templates/SelectedDetails.html',
-        
-        
+        templateUrl:'templates/SelectedDetails.html'
       })
       .state('home',{
         url:'/home',
         abstract: true,
         templateUrl:'templates/home.html',
         controller: 'homeCtrl'
-        
+
       })
 
       .state('home.match', {
@@ -76,7 +74,8 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         url: "/chat",
         views: {
           'chat-tab': {
-            templateUrl: "templates/chat.html"
+            templateUrl: "templates/chat.html",
+            controller:"chatListCtrl"
           }
         }
       })
@@ -98,18 +97,26 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
           }
         }
       })
-     
+
       .state('settings',{
         url:'/settings',
         templateUrl:'templates/settings.html'
+      })
+      .state('editProfile',{
+        url:'/editProfile',
+        templateUrl:'templates/editProfile.html'
       })
       .state('terms',{
         url:'/terms',
         templateUrl:'templates/terms.html'
       })
       ;
+<<<<<<< HEAD
 
       $urlRouterProvider.otherwise('/login');
+=======
+      $urlRouterProvider.otherwise('/home/match');
+>>>>>>> 17d93e41cac6217987d2f71d5a2b01f31be12db2
 
 })
 
