@@ -13,7 +13,7 @@ angular.module('starter.chat-services',[])
 .factory('chatRoomList',function($http) {
 return {
 		getChatList : function() {
-			return $http.get('https://jsonblob.com/api/57999a06e4b0dc55a4e835cf',{ params:{format:"json"}});
+			return $http.get('https://jsonblob.com/api/5799da41e4b0dc55a4e8420e',{ params:{format:"json"}});
 		}
 	}
 });

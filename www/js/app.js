@@ -45,7 +45,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         controller:'infoCtrl'
       })
       .state('chatbox',{
-        url:'/chatbox/:id',
+        url:'/chatbox/:id:name:picture',
         templateUrl:'templates/chatBox.html',
         controller:'chatboxCtrl'
       })
