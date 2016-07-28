@@ -1,0 +1,10 @@
+<ion-view view-title="Chat">
+	<ion-content>
+		<div class="list card" ng-repeat = "chatRoom in chatRoomList">
+			<a class="item item-avatar"  ui-sref="chatbox({id:chatRoom.room_id})">
+		      <img src={{chatRoom.picture}}>
+		      <h2>{{chatRoom.name}}</h2>
+		    </a>
+		</div>
+	</ion-content>
+</ion-view>

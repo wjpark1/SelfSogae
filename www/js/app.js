@@ -18,9 +18,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
-    }
-    
-    
+   }
 
   if(window.Connection) {
       if(navigator.connection.type == Connection.NONE) {
@@ -60,15 +58,13 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         controller:'infoCtrl'
       })
       .state('chatbox',{
-        url:'/chatbox',
+        url:'/chatbox/:id',
         templateUrl:'templates/chatBox.html',
         controller:'chatboxCtrl'
       })
       .state('selected',{
         url:'/selected',
-        templateUrl:'templates/SelectedDetails.html',
-        
-        
+        templateUrl:'templates/SelectedDetails.html'
       })
       
       .state('home',{
@@ -76,7 +72,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         abstract: true,
         templateUrl:'templates/home.html',
         controller: 'homeCtrl'
-        
+
       })
 
       .state('home.match', {
@@ -92,7 +88,8 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         url: "/chat",
         views: {
           'chat-tab': {
-            templateUrl: "templates/chat.html"
+            templateUrl: "templates/chat.html",
+            controller:"chatListCtrl"
           }
         }
       })
@@ -114,17 +111,23 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
           }
         }
       })
-     
+
       .state('settings',{
         url:'/settings',
         templateUrl:'templates/settings.html'
+      })
+      .state('editProfile',{
+        url:'/editProfile',
+        templateUrl:'templates/editProfile.html'
       })
       .state('terms',{
         url:'/terms',
         templateUrl:'templates/terms.html'
       })
       ;
+
       $urlRouterProvider.otherwise('/home/notifications');
+
 })
 .filter('nl2br', ['$filter',
   function($filter) {

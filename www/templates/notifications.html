@@ -1,6 +1,10 @@
 <ion-view view-title="Notifications">
 	<ion-content>
+
 			<div class="card" style="width:100%;margin:0px;padding:0px;background-color:transparent !important;">
+	<!--div class ="requests" ng-repeat = "chatRoom in chatRoomList">
+			<div class="list card cardNotify " style="width:100%;margin:0px;background-color:#F08080"-->
+>
 			
 		    <div  class="item item-avatar shade" ng-click="">
 		      <img src="img/profile1.png">
@@ -22,6 +26,7 @@
 		      		<button class=" button button-outline button-assertive" style="padding:0px;color:red"><i class="ion ion-close"></i></button>
 		      </div>
 		    </div>
+		</div>
 		   
 
 		   <!-- <div style="float:left;padding:10px">
@@ -40,12 +45,17 @@
 		</div-->
 		<!--div class="btnArea">
 			 <button class="button button-icon ion ion-checkmark accbtn" style="background-color:lightgreen">
+=======
+		<div class="btnArea">
+			 <button class="button button-icon ion ion-checkmark accbtn" style="background-color:lightgreen" ng-click="acceptFunc()">
+>>>>>>> 3becfb1d2e4fdbe68a4690a4fe79252cc832dd27
  					Accept
 			</button>
-			<button class="button button-icon ion ion-close" style="background-color:red;opacity:0.6">
+			<button class="button button-icon ion ion-close" style="background-color:red;opacity:0.6" ng-click="rejectFun()">
   					Reject
 			</button>
-		</div-->
 		</div>
+		</div-->
+	
 	</ion-content>
 </ion-view>

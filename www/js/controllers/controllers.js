@@ -31,10 +31,10 @@ angular.module('starter.controllers', [])
   });
 
   $scope.toggleIcon = function($event, iconName,username) {
+    var success = false;
     var buttonClasses = $event.currentTarget.className;
-  socket.emit('request',{'by':"fds",'to':"fdvsf"});
-  var success = false;
-  socket.on("request-sent",function(body){
+    socket.emit('request',{'by':"shubham",'to':"ladki"});
+    socket.on("request-sent",function(body){
     success = body.success;
     if(success){
       if (buttonClasses.indexOf(iconName + '-outline') > 0) {
@@ -43,9 +43,7 @@ angular.module('starter.controllers', [])
       buttonClasses = buttonClasses.replace(iconName, iconName + '-outline');
     }
     $event.currentTarget.className = buttonClasses;
-      
     }
-
   })
     
 
@@ -75,11 +73,18 @@ angular.module('starter.controllers', [])
     
 
 })
-.controller('notifcationsCtrl', function($scope,$rootScope) {
+.controller('notifcationsCtrl', function($scope,$rootScope,socket) {
 $scope.$on('$ionicView.enter', function() {
           $rootScope.data=0;
      
     });
+$scope.acceptFun = function(){
+    socket.emit('request-accepted',{'acceptedBy':"Shubham",'requestedBy':"agrawal"});
+};
+$scope.rejectFun = function(){  
+    socket.emit('request-declined',{'username':"Shubham",'to':"Agrawal"});
+};
+
    
 })
 
@@ -107,7 +112,7 @@ $scope.$on('$ionicView.enter', function() {
 
 .controller('profileCtrl',function($scope,$state){
   $scope.Edit=function(){
-     $state.go('firstSignup');
+     $state.go('editProfile');
   }
 })
 

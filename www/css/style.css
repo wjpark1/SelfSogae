@@ -337,9 +337,9 @@ img.profile-pic.right {
   top: -3px;
 }
 
-input, textarea, .item-input, .item-input-wrapper {
+/*input, textarea, .item-input, .item-input-wrapper {
   background-color: #f4f4f4 !important;
-}
+}*/
 
 .bold {
   font-weight: bold;
@@ -416,8 +416,9 @@ a.autolinker {
 	height:125px;
 	position:absolute;
 	margin-left:33%;
-	margin-top:-30%;
+	margin-top:-34%;
 	border-radius: 50%;
+  z-index: 2;
 }
 .profile-modal-card
 {
@@ -444,4 +445,12 @@ a.autolinker {
   padding: 5px;
   line-height: 1.5;
   background-color: rgba(255, 255, 255, 0.6);
+}
+.icon-pos
+{
+  margin-top:-15px;
+}
+.italic
+{
+  font-style:italic;
 }
