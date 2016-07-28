@@ -7,13 +7,13 @@ angular.module('starter.chatControllers', [])
       console.log("sh"+data.data.data[0].partner);
       $scope.chatRoomList = data.data.data;
       localStorage.chatRoomList = JSON.stringify(data.data.data);
-
    })
 
 })
 
+
 .controller('chatboxCtrl', function($scope,$state,$localStorage,$ionicPlatform,$stateParams,$timeout,$interval,$ionicScrollDelegate,socket) {
-    
+
     var auth;
     var x = $stateParams.id;
     $scope.name = $stateParams.name;
@@ -21,7 +21,7 @@ angular.module('starter.chatControllers', [])
     console.log(x);
     var roomId=$stateParams.id;
     console.log("roomId"+roomId);
-    
+
     var chatList = JSON.parse(localStorage.chatRoomList);
     var roomId=$stateParams.id;
     $scope.$on('$ionicView.enter', function() {
@@ -32,7 +32,7 @@ angular.module('starter.chatControllers', [])
       socket.emit("join_room",{'room':roomId});
       console.log('UserMessages $ionicView.enter');
       getMessages();
-      
+
       $timeout(function() {
         footerBar = document.body.querySelector('#userMessagesView .bar-footer');
         scroller = document.body.querySelector('#userMessagesView .scroll-content');
@@ -42,7 +42,7 @@ angular.module('starter.chatControllers', [])
       messageCheckTimer = $interval(function() {
         }, 20000);
       });
-    
+
     socket.emit('authentication',{token:"",userId:""});
     socket.on('authenticated',function(body){
       if(body.success == true){
@@ -56,7 +56,7 @@ angular.module('starter.chatControllers', [])
         $timeout(function() {
           viewScroll.scrollBottom();
         }, 0);
-      
+
     }
     var viewScroll = $ionicScrollDelegate.$getByHandle('userMessageScroll');
     $scope.textbox="";
@@ -69,10 +69,10 @@ angular.module('starter.chatControllers', [])
       text:""
     }];
     $scope.sendMessage= function() {
-        
+
         console.log($scope.textbox);
         socket.emit('chatting',{"message":$scope.textbox,"room":roomId});
-        $scope.messages.push({type:"0",text:$scope.textbox});  
+        $scope.messages.push({type:"0",text:$scope.textbox});
         localStorage.setItem(String(roomId),JSON.stringify($scope.messages));
         // localStorage.roomId=JSON.stringify($scope.messages);
         $scope.textbox='';
@@ -82,9 +82,6 @@ angular.module('starter.chatControllers', [])
 
   }
 
-
-        // }
-// };
 
 socket.on('new_message',function(data){
   // $scope.messages_return = [];
@@ -96,7 +93,7 @@ socket.on('new_message',function(data){
           viewScroll.scrollBottom();
         }, 0);
  });
- 
+
   console.log("chat is running");
   console.log(socket);
 
