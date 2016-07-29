@@ -1,25 +1,19 @@
 <ion-view view-title="Notifications">
 	<ion-content>
 
-		<div class="card" style="width:100%;margin:0px;padding:0px;background-color:transparent !important;">	
+			<div class="card" ng-repeat = "requests in requestList" style="width:100%;margin:0px;padding:0px;background-color:transparent !important;">
 		    <div  class="item item-avatar shade" ng-click="">
-		      	<img src="img/profile1.png">
-		        <div class="my-container" style="float:left;width:55%;">
-
-      					<p class="row first-row" style="white-space:no-wrap"><strong>Venkman likes jwjwwwwwww you</strong></p>
-
-      					<p class="row second-row">Height : 20</p>
-
-      					<p class="row third-row" style="white-space:no-wrap">Business man</p>
-
-  				</div>
-		      
-			      <div class="" style="float:right">
-			      		<button class=" button button-outline button-balanced"  ng-click='acceptFun(this)' style="padding:0px"><i class="ion ion-checkmark"></i></button>
-			      		<button class=" button button-outline button-assertive" ng-click="rejectFun(this)" style="padding:0px;color:red"><i class="ion ion-close"></i></button>
-			      </div>
+		      <img src={{requests.picture}}>
+		        <div class="my-container" style="float:left">
+      					<h2 class="row first-row" style="white-space:no-wrap"><strong>{{requests.name}} likes you</strong></h2>
+						<h2 class="row first-row">Height : {{requests.height}}</h2>
+						<h2 class="row third-row" style="white-space:no-wrap">{{requests.occupation}}</h2>
+				</div>
+		      <div class="" style="float:right">
+		      		<button class=" button button-outline button-balanced" style="padding:0px" ng-click="acceptFun(this,{{requests.username}})"><i class="ion ion-checkmark" ></i></button>
+		      		<button class=" button button-outline button-assertive" style="padding:0px;color:red" ng-click = "rejectFun(this,{{requests.username}})"><i class="ion ion-close"></i></button>
+		      </div>
 		    </div>
 		</div>
-	
 	</ion-content>
 </ion-view>

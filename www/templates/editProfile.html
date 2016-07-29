@@ -1,14 +1,18 @@
-<ion-view class="bck">
+<ion-view class="bck" style="margin:0px">
 <ion-content>
 <div class="list full">
 
 		<div class="card full1 margin0 profile-modal-card">
-				<label class="item text-color full1" style="text-align:center;"><strong>SignUp Details</strong></label>
+				<label class="item text-color full1" style="text-align:center;"><strong>Edit Profile</strong></label>
 		</div>
 		<div class="card">
-				
-
-				<label class="item text-color"><strong>Love to meet</strong><label style="float:right">{{checkModel.value1}}<label ng-show="checkModel.value1 === 'Male' && checkModel.value2 === 'Female'">&nbsp; &amp; &nbsp;</label>{{ checkModel.value2}}</label></label>
+				<label class="item item-input">
+  					<span class="input-label">Name</span>
+  					<input type="text" class="shade" placeholder="Change Name" ng-model="">
+				</label>
+				<label class="item text-color"><strong>Love to meet</strong>
+					<label style="float:right">{{checkModel.value1}}<label ng-show="checkModel.value1 === 'Male' && checkModel.value2 === 'Female'">&nbsp; &amp; &nbsp;</label>{{ checkModel.value2}}</label>
+				</label>
 				<div class="item item-toggle">
      						Male
      						<label class="toggle toggle-assertive">
@@ -33,65 +37,61 @@
 				<label class="item text-color"><strong>Personal Details</strong></label>
 					<label class="item item-input">
 			  					<span class="input-label">Occupation</span>
-			  					<input type="text" class="shade" placeholder=" Enter Occupation">
+			  					<input type="text" class="shade" placeholder=" Enter Occupation" ng-model="form.occupation">
 					</label>
 					<label class = "item item-input item-select">
 			   				<div class = "input-label">
 			      				Height
 							</div>
-				
-			   				<select>
-			     					<option selected>less than 160cms</option>
-			      					<option>160-165cms</option>
-			     					<option>166-170cms</option>
-			     					<option>171-175cms</option>
-			     					<option>176-180cms</option>
-			     					<option>181-185cms</option>
-			     					<option>186-190cms</option>
-			     					<option>191-195cms</option>
 
-			     					<option>196-200cms</option>
-			     					<option>More than 200cms</option>
-			     					
-			      					
+			   				<select name="height" ng-model="form.height" >
+			     					<option value="0">less than 160cms</option>
+                    <option value="1">160-165cms</option>
+			     					<option value="2">166-170cms</option>
+			     					<option value="3">171-175cms</option>
+			     					<option value="4">176-180cms</option>
+			     					<option value="5">181-185cms</option>
+			     					<option value="6">186-190cms</option>
+			     					<option value="7">191-195cms</option>
+			     					<option value="8">196-200cms</option>
+			     					<option value="9">More than 200cms</option>
 			   				</select>
 					</label>
-				
+
 							<label class = "item item-input item-select">
 			   				<div class = "input-label">
 			      				Religion
 							</div>
-				
-			   				<select>
-			     					<option>Buddists</option>
-			      					<option selected>Christian</option>
-			     					<option>Catholic</option>
-			     					<option>Hindu</option>
-			     					<option>Jewish</option>
-			     					<option>Muslim</option>
-			     					<option>Sikh</option>
-			     					<option>Shinto</option>
-			     					<option>Spiritual But not religious</option>
-			     					<option>Neither Spiritual nor religious</option>
-			     					<option>Other</option>
-			      					
+
+			   				<select name="religion" ng-model="form.religion">
+			     					<option value="buddists">Buddists</option>
+                    <option value="christian">Christian</option>
+			     					<option value="catholic">Catholic</option>
+			     					<option value="hindu">Hindu</option>
+			     					<option value="jewish">Jewish</option>
+			     					<option value="muslim">Muslim</option>
+			     					<option value="sikh">Sikh</option>
+			     					<option value="shinto">Shinto</option>
+			     					<option value="sbns">Spiritual But not religious</option>
+			     					<option value="nsnr">Neither Spiritual nor religious</option>
+			     					<option value="other">Other</option>
 			   				</select>
 							</label>
-						
-					
-							
+
+
+
 							<label class="item item-input">
 			  					<span class="input-label">High School</span>
-			  					<input type="text" class="shade" placeholder=" Enter High School">
+			  					<input type="text" class="shade" placeholder=" Enter High School" ng-model="form.high_school">
 							</label>
-				
+
 							<label class="item item-input">
 			  					<span class="input-label">Bachelors</span>
-			  					<input type="text" class="shade" placeholder=" Enter Bachelors">
+			  					<input type="text" class="shade" placeholder=" Enter Bachelors" ng-model="form.bachelors">
 							</label>
-						
-					
-					
+
+
+
 
 		    		<!--</ion-scroll>-->
 		    </div>
@@ -99,44 +99,44 @@
 					<label class="item text-color"><strong>Hobbies</strong></label>
 					<!--<ion-scroll direction="y" style="height:8em">-->
 						<div class="row" >
-								<div class="col-50"><ion-checkbox>Photography</ion-checkbox></div>
-								<div class="col-50"><ion-checkbox>Travel</ion-checkbox></div>
+								<div class="col-50"><ion-checkbox ng-model="form.hobbies[0]" ng-true-value="'photography'" ng-false-value="'false'">Photography</ion-checkbox></div>
+								<div class="col-50"><ion-checkbox ng-model="form.hobbies[1]" ng-true-value="'travel'" ng-false-value="'false'">Travel</ion-checkbox></div>
 						</div>
-						
+
 						<div class="row">
-							<div class="col-50"><ion-checkbox>Art</ion-checkbox></div>
-							<div class="col-50"><ion-checkbox>Music</ion-checkbox></div>
-						</div>
-						<div class="row">
-							<div class="col-50"><ion-checkbox>Sports</ion-checkbox></div>
-							<div class="col-50"><ion-checkbox>Dancing</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox ng-model="form.hobbies[2]" ng-true-value="'art'" ng-false-value="'false'">Art</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox ng-model="form.hobbies[3]" ng-true-value="'music'" ng-false-value="'false'">Music</ion-checkbox></div>
 						</div>
 						<div class="row">
-							<div class="col-50"><ion-checkbox>Nature</ion-checkbox></div>
-							<div class="col-50"><ion-checkbox>Technology</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox ng-model="form.hobbies[4]" ng-true-value="'sports'" ng-false-value="'false'">Sports</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox ng-model="form.hobbies[5]" ng-true-value="'dancing'" ng-false-value="'false'">Dancing</ion-checkbox></div>
 						</div>
 						<div class="row">
-							<div class="col-50"><ion-checkbox>Cooking/Eating</ion-checkbox></div>
-							<div class="col-50"><ion-checkbox>Gaming</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox ng-model="form.hobbies[6]" ng-true-value="'nature'" ng-false-value="'false'">Nature</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox ng-model="form.hobbies[7]" ng-true-value="'tech'" ng-false-value="'false'">Technology</ion-checkbox></div>
 						</div>
 						<div class="row">
-							<div class="col-51"><ion-checkbox>Reading/Writing</ion-checkbox></div>
-							<div class="col-49"><ion-checkbox>Health</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox ng-model="form.hobbies[8]" ng-true-value="'cook-eat'" ng-false-value="'false'">Cooking/Eating</ion-checkbox></div>
+							<div class="col-50"><ion-checkbox ng-model="form.hobbies[9]" ng-true-value="'gaming'" ng-false-value="'false'">Gaming</ion-checkbox></div>
+						</div>
+						<div class="row">
+							<div class="col-51"><ion-checkbox ng-model="form.hobbies[10]" ng-true-value="'read-write'" ng-false-value="'false'">Reading/Writing</ion-checkbox></div>
+							<div class="col-49"><ion-checkbox ng-model="form.hobbies[11]" ng-true-value="'health'" ng-false-value="'false'">Health</ion-checkbox></div>
 						</div>
 
     				<!--</ion-scroll>-->
     		</div>
 	    	<div class="card">
 			        <label class="item item-input text">
-			          <textarea placeholder="Describe Yourself..." rows="3" class="row2" ng-Required="true"></textarea>
+			          <textarea placeholder="Describe Yourself..." rows="3" class="row2" ng-model="form.about_me" ></textarea>
 			        </label>
 	        </div>
 
 	<div class="row">
 		<div class="col-20 full">&nbsp;</div>
 		<div class="col-60">
-		<button class="button button-color full" ui-sref='home.profile'>
-  			Save
+		<button class="button button-color full" ng-click="submit()">
+  			Save Changes
 		</button>
 		</div>
 

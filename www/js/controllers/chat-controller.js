@@ -1,6 +1,5 @@
 angular.module('starter.chatControllers', [])
 
-
 .controller('chatListCtrl',function($scope,$state,$stateParams,chatRoomList){
    chatRoomList.getChatList().then(function(data){
     console.log(data);
@@ -8,12 +7,9 @@ angular.module('starter.chatControllers', [])
       $scope.chatRoomList = data.data.data;
       localStorage.chatRoomList = JSON.stringify(data.data.data);
    })
-
 })
 
-
 .controller('chatboxCtrl', function($scope,$state,$localStorage,$ionicPlatform,$stateParams,$timeout,$interval,$ionicScrollDelegate,socket) {
-
     var auth;
     var x = $stateParams.id;
     $scope.name = $stateParams.name;
@@ -60,10 +56,9 @@ angular.module('starter.chatControllers', [])
     }
     var viewScroll = $ionicScrollDelegate.$getByHandle('userMessageScroll');
     $scope.textbox="";
- // $scope.input.message="";
-    var footerBar; // gets set in $ionicView.enter
+    var footerBar;
     var scroller;
-    var txtInput; // ^^^
+    var txtInput; 
     $scope.messages = [{
       type:"",
       text:""
@@ -84,11 +79,10 @@ angular.module('starter.chatControllers', [])
 
 
 socket.on('new_message',function(data){
-  // $scope.messages_return = [];
+
     console.log("message aaya hai");
     $scope.messages.push({type:"1",text:data.body});
     localStorage.setItem(String(roomId),JSON.stringify($scope.messages));
-    // localStorage.roomId=JSON.stringify($scope.messages);
        $timeout(function() {
           viewScroll.scrollBottom();
         }, 0);
