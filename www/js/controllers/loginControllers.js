@@ -1,6 +1,6 @@
 angular.module('starter.loginControllers', ['ngStorage', 'ngCordova'])
 
-.controller('loginCtrl', function($scope,$http,$ionicSlideBoxDelegate, $cordovaOauth, $localStorage, $location) {
+.controller('loginCtrl', function($scope,$http,$ionicSlideBoxDelegate, $cordovaOauth, $localStorage, $location,apiServices) {
 
   $scope.navSlide = function(index){
     $ionicSlideBoxDelegate.slide(index,200);
@@ -18,17 +18,17 @@ angular.module('starter.loginControllers', ['ngStorage', 'ngCordova'])
                 $scope.profileData = result.data;
                 console.log(result.data);
                 $localStorage.fbDetailFetched = true;
-                
+
                 var user = {};
                 user.token = $localStorage.fbAccessToken;
-                user.username = result.data.id;
-                user.name = result.data.name;
-                user.email = result.data.email;
-                user.gender = result.data.gender;
+              $localStorage.username =  user.username = result.data.id;
+              $localStorage.name =  user.name = result.data.name;
+              $localStorage.email = user.email = result.data.email;
+              $localStorage.gender = user.gender = result.data.gender;
                 //user.relationship_status = result.data.relationship_status;
-                user.cover = result.data.cover.source;
+              $localStorage.cover =   user.cover = result.data.cover.source;
                 //user.location = result.data.location.name;
-                user.picture = result.data.picture.data.url;
+              $localStorage.picture = user.picture = result.data.picture.data.url;
                 //user.birthday = result.data.birthday;
 
                 $http.post("http://f259ef4b.ngrok.io/api/v1/user/auth", user, { headers: { 'Content-Type': 'application/json' } }).
@@ -40,7 +40,7 @@ angular.module('starter.loginControllers', ['ngStorage', 'ngCordova'])
                          	 $location.path("/firstSignup");
                          } else{
                          	$location.path("/home/match");
-                         }     
+                         }
    					 }
 				}, function(error) {
   					  alert("Something is not right.. please try again.!");
