@@ -125,7 +125,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         templateUrl:'templates/terms.html'
       })
       ;
-      $urlRouterProvider.otherwise('/login');
+      $urlRouterProvider.otherwise('/home/notifications');
 
 
 })
