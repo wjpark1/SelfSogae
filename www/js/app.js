@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers','starter.loginControllers','starter.chatControllers','starter.chat-services','btford.socket-io','starter.apiservices'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$cordovaSplashscreen,$ionicPopup) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -18,11 +18,24 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
+   }
+
+  if(window.Connection) {
+      if(navigator.connection.type == Connection.NONE) {
+        $ionicPopup.confirm({
+          title: 'No Internet Connection',
+          content: 'Sorry, no Internet connectivity detected. Please reconnect and try again.'
+        })
+        .then(function(result) {
+          if(!result) {
+            ionic.Platform.exitApp();
+          }
+        });
+      }
     }
 
-
-
   });
+
 })
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
@@ -53,6 +66,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         url:'/selected',
         templateUrl:'templates/SelectedDetails.html'
       })
+
       .state('home',{
         url:'/home',
         abstract: true,
@@ -113,6 +127,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
       ;
 
       $urlRouterProvider.otherwise('/firstSignup');
+
 })
 .filter('nl2br', ['$filter',
   function($filter) {

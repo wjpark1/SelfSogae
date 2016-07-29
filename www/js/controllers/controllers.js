@@ -100,10 +100,7 @@ angular.module('starter.controllers', [])
 })
 .controller('homeCtrl', function($scope,$state,$ionicPlatform,$rootScope, $ionicModal,socket) {
   $ionicPlatform.ready(function() {
-            if(window.StatusBar){
-    window.StatusBar.overlaysWebView(false);
-    window.StatusBar.Hide();
-            }
+            
   });
 
   $scope.toggleIcon = function($event, iconName,username) {
