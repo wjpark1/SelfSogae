@@ -1,9 +1,9 @@
 <ion-view class="bck">
 	<ion-content scroll="false">
-		<div class="full">
-				<ion-slide-box class="card" pager-click="navSlide(index)"	auto-play="true" does-continue="true" >
+		<div class="full zeropadd">
+				<ion-slide-box class="card" pager-click="navSlide(index)" style="height:70%"	auto-play="true" does-continue="true" >
 			        <ion-slide>
-			        		
+			        	
 			        			<img src="img/slide1.jpg" class="full">
 			        	
 			        </ion-slide>
@@ -16,8 +16,15 @@
 			        	
 			        </ion-slide>
 			    </ion-slide-box>
-
-				<div class="row">
+			    <div class="card bck bottomCard">
+			    		<div>
+						<p>By continuing, you agree to our <strong><a ui-sref="terms">Terms & Conditions</a></strong>.</p>
+						<button class="button button-block fb-button-color" ng-click="login()">
+				  			<i class="icon ion-social-facebook">  </i>   Log in with Facebook
+						</button>
+						</div>
+			   	</div>
+				<!--div class="row">
 					<div class="col-10"></div>
 					<div class="col-90">
 						<p>By continuing, you agree to our <strong><a ui-sref="terms">Terms & Conditions</a></strong>.</p>
@@ -32,7 +39,7 @@
 						</button>
 					</div>
 					<div class="col-10"></div>
-				</div>
+				</div-->
 
 		</div>
 	</ion-content>

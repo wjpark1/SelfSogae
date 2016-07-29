@@ -1,10 +1,67 @@
-/* Empty. Add your own CSS if you like */
-.backImage{
+ .my-container {
 
-	background: url(../img/back3.jpg);
+       display: flex;
 
+       flex-direction: column;
+
+  }
+   .first-row {
+
+       flex: 1;
+
+ }
+
+ .second-row {
+
+       flex: 2;
+
+ }
+
+ .third-row {
+
+       flex: 1;
+
+ }
+
+.ion-close{
+  color:red !important;
+}
+/* login.html */
+.full
+{
+  height:100%;
+  width:100%;
+}
+.zeropadd{
+  padding: 0px;
 }
 
+.slideShow{
+    height: 70%;
+}
+
+.bottomCard{
+  height:25%;
+  position:absolute;
+  bottom:0px;
+  width:100%;
+  margin:0px;
+  padding:5%
+}
+.bottomCard div{
+  margin-top: 6%;
+}
+.bottomCard div p{
+  margin-bottom:5%
+}
+
+/* login finish */
+
+.backImage{
+
+  background: url(../img/back3.jpg);
+
+}
 
 .ion-close{
 	color: white;
@@ -33,15 +90,6 @@
 	margin-top: 12%;
 }
 
-.login{
-	background: url(../img/SplashGrey1.jpg);
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
-	max-width:100%;
-	max-height:100%;
-}
-
 .shade{
 	background-color: #F5F5F5 !important;
 	opacity: 0.5;
@@ -56,11 +104,7 @@
 .margin0{
 	margin: 0px;
 }
-.full
-{
-	height:100%;
-	width:100%;
-}
+
 .container1
 {
 	height: 100%;
@@ -92,7 +136,7 @@
 }
 .bck{
 	/*background: url(../img/AppBackground.jpg);*/
-	background-color: #FAFAFA;
+	background-color: #F2F2F2;
 }
 
 .button-color
@@ -109,6 +153,7 @@
 	max-height:100px !important;
 	width:100% !important;
 }
+.md-scroll-mask { position: initial;}
 
 .tabs-positive .tabs{
 background-color: #eb5b78 !important;

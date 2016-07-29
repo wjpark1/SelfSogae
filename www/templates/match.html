@@ -1,10 +1,11 @@
-<ion-view view-title="Match">
+<ion-view view-title="Match" >
 	<ion-content>
 		<ion-slide-box show-pager="false" class="slide1-pos" ng-repeat="data in dataset">
 		    <ion-slide>
+
 				<div class="list card match-card-back">
 					<div class="item item-image">
-						<img src="{{data.picture}}" ng-click="viewProfile(data)">
+						<img ng-src="{{data.picture}}" ng-click="viewProfile(data)">
 						<div class="card-description">
 							<div class="row" style="height:50px;">
 						      	<div class="col col-60">
@@ -12,6 +13,7 @@
 						      	</div>
 						      	<div class="col col-20">
 							      	<h5>Age</h5>
+
 						      	</div>
 						      	<div class="col col-20 heart-icon-pos">
 					        		<a class="button button-icon icon ion-ios-heart-outline" ng-click="toggleIcon($event, 'ion-ios-heart', data.username)" ></a>
@@ -20,6 +22,7 @@
 						</div>
 					</div>
 			  	</div>
+			  	
 		    </ion-slide>
 			<ion-slide>
 				<div class="card match-card-back">
