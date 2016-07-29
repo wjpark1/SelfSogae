@@ -123,8 +123,10 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
       .state('terms',{
         url:'/terms',
         templateUrl:'templates/terms.html'
+
       });
       $urlRouterProvider.otherwise('/home/notifications');
+      });
 })
 .filter('nl2br', ['$filter',
   function($filter) {
