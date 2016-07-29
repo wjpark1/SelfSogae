@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','starter.loginControllers','starter.chatControllers','starter.chat-services','btford.socket-io'])
+angular.module('starter', ['ionic', 'starter.controllers','starter.loginControllers','starter.chatControllers','starter.chat-services','btford.socket-io','starter.apiservices'])
 
 .run(function($ionicPlatform,$cordovaSplashscreen,$ionicPopup) {
   $ionicPlatform.ready(function() {
@@ -35,7 +35,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
     }
 
   });
-  
+
 })
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
@@ -66,7 +66,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         url:'/selected',
         templateUrl:'templates/SelectedDetails.html'
       })
-      
+
       .state('home',{
         url:'/home',
         abstract: true,
@@ -123,11 +123,8 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
       .state('terms',{
         url:'/terms',
         templateUrl:'templates/terms.html'
-      })
-      ;
+      });
       $urlRouterProvider.otherwise('/home/notifications');
-
-
 })
 .filter('nl2br', ['$filter',
   function($filter) {

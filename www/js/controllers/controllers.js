@@ -14,16 +14,89 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('signupCtrl', function($scope,$state,$ionicPlatform) {
+.controller('signupCtrl', function($scope,$state,$ionicPlatform,$localStorage,apiServices) {
+
+    $scope.checkModel = {
+      value1 : '',
+      value2 : ''
+    };
+    $scope.form = {
+      height:"0",
+      religion: "buddists",
+      occupation: "",
+      about_me:"",
+      high_school: "",
+      bachelors: "",
+      hobbies: []
+    };
+
+
   /*$ionicPlatform.ready(function() {
             if(window.StatusBar){
                     window.StatusBar.overlaysWebView(false);
                     window.StatusBar.Hide();
             }
   });*/
-  $scope.SignUp=function(){
-    $state.go('home.match');
+  $scope.submit=function(){
+
+    var data = {};
+    data.hobbies = [];
+
+    if($scope.checkModel.value1 === "Male" && $scope.checkModel.value2 === "Female" )
+      data.interested_in = "both";
+    else if($scope.checkModel.value1 === "Male")
+       data.interested_in = "male";
+    else if($scope.checkModel.value2 === "Female")
+       data.interested_in = "female";
+    else{
+      alert("Please select any option in Intrested In section..!!")
+      return;
+    }
+
+    data.height = parseInt($scope.form.height, 10);
+    data.religion = $scope.form.religion;
+
+    var count = 0;
+    for(var i=0;i<$scope.form.hobbies.length;i++){
+      if($scope.form.hobbies[i] !== "false" && $scope.form.hobbies[i]) {
+        data.hobbies.push($scope.form.hobbies[i]);
+        count++;
+      }
+    }
+    if(count <= 3){
+      alert("Please select atleat four hobbie..!")
+      return;
+    }
+
+    data.occupation = $scope.form.occupation;
+    if(data.occupation.trim() === "") {
+      alert("Occupation is not valid.!");
+      return;
+    }
+    data.about_me = $scope.form.about_me;
+    if(data.about_me.trim() === "") {
+      alert("Please discribe yourself..!");
+      return;
+    }
+    data.high_school = $scope.form.high_school;
+    data.bachelors = $scope.form.bachelors;
+    data.complete_flag = true;
+    data.username = $localStorage.username;
+    data.token = $localStorage.serverToken;
+
+
+    apiServices.updateProfile(data).
+      then(function(response) {
+               if(response.data.success) {
+                 $state.go('home.match');
+                 console.log(response);
+               }
+      }, function(error) {
+        alert("Something is not right.. please try again.!");
+        console.log(error);
+      });
   }
+
 })
 .controller('homeCtrl', function($scope,$state,$ionicPlatform,$rootScope, $ionicModal,socket) {
   $ionicPlatform.ready(function() {
@@ -45,7 +118,7 @@ angular.module('starter.controllers', [])
     $event.currentTarget.className = buttonClasses;
     }
   })
-    
+
 
     console.log(username);
   }
@@ -67,10 +140,12 @@ angular.module('starter.controllers', [])
     $scope.data = data;
     $scope.modal.show();
   };
+
   $rootScope.data=0;
   socket.on('notification',function(){
     $rootScope.data++;
   });
+
 })
 .controller('notifcationsCtrl', function($scope,$rootScope,socket,requestsList) {
 $scope.$on('$ionicView.enter', function() {
@@ -89,7 +164,7 @@ $scope.acceptFun = function(obj,username){
 $scope.rejectFun = function(obj,username){
     console.log(username);  
     socket.emit('request-declined',{'username':localStorage.username,'to':username});
-};
+   };
 })
 
 .controller('infoCtrl', function($scope,$ionicSlideBoxDelegate) {
