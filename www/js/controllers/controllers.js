@@ -78,10 +78,10 @@ $scope.$on('$ionicView.enter', function() {
           $rootScope.data=0;
      
     });
-$scope.acceptFun = function(){
+$scope.acceptFun = function(obj){
     socket.emit('request-accepted',{'acceptedBy':"Shubham",'requestedBy':"agrawal"});
 };
-$scope.rejectFun = function(){  
+$scope.rejectFun = function(obj){  
     socket.emit('request-declined',{'username':"Shubham",'to':"Agrawal"});
 };
 
