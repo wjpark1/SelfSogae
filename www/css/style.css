@@ -1,3 +1,12 @@
+.left{
+  float:left;
+}
+.right{
+  float:right;
+}
+
+ /* Notifications.html */
+
  .my-container {
 
        display: flex;
@@ -10,22 +19,28 @@
        flex: 1;
 
  }
-
- .second-row {
-
-       flex: 2;
-
- }
-
- .third-row {
-
-       flex: 1;
-
- }
-
 .ion-close{
   color:red !important;
 }
+.NotifyCard{
+  width:100%;
+  margin:0px;
+  padding:0px;
+  background-color: transparent !important;
+}
+.wrapping{
+  white-space: no-wrap;
+}
+.setWidth{
+  width:55%;
+}
+
+/* Notifications.html finish*/
+
+
+
+
+
 /* login.html */
 .full
 {
