@@ -67,25 +67,29 @@ angular.module('starter.controllers', [])
     $scope.data = data;
     $scope.modal.show();
   };
-  $rootScope.data=3;
-
-
-    
-
+  $rootScope.data=0;
+  socket.on('notification',function(){
+    $rootScope.data++;
+  });
 })
-.controller('notifcationsCtrl', function($scope,$rootScope,socket) {
+.controller('notifcationsCtrl', function($scope,$rootScope,socket,requestsList) {
 $scope.$on('$ionicView.enter', function() {
-          $rootScope.data=0;
+        requestsList.getRequestList().then(function(data){
+          $scope.requestList = data.data.data;
+          console.log(data);
+        });
+          // $rootScope.data=0;
      
-    });
-$scope.acceptFun = function(){
-    socket.emit('request-accepted',{'acceptedBy':"Shubham",'requestedBy':"agrawal"});
+});
+$scope.acceptFun = function(obj,username){
+  console.log(username);
+  console.log(obj);
+    socket.emit('request-accepted',{'acceptedBy':localStorage.username,'requestedBy':username});
 };
-$scope.rejectFun = function(){  
-    socket.emit('request-declined',{'username':"Shubham",'to':"Agrawal"});
+$scope.rejectFun = function(obj,username){
+    console.log(username);  
+    socket.emit('request-declined',{'username':localStorage.username,'to':username});
 };
-
-   
 })
 
 .controller('infoCtrl', function($scope,$ionicSlideBoxDelegate) {

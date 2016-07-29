@@ -10,6 +10,14 @@ angular.module('starter.chat-services',[])
   return mySocket;
 })
 
+.factory('requestsList',function($http){
+	return {
+		getRequestList : function() {
+			return $http.get('https://jsonblob.com/api/579aedf1e4b0dc55a4e8b28d',{params:{format:"json"}});
+		}
+	}
+})
+
 .factory('chatRoomList',function($http) {
 return {
 		getChatList : function() {
