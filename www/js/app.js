@@ -111,12 +111,8 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         templateUrl:'templates/terms.html'
       })
       ;
-<<<<<<< HEAD
 
-      $urlRouterProvider.otherwise('/login');
-=======
       $urlRouterProvider.otherwise('/home/match');
->>>>>>> 17d93e41cac6217987d2f71d5a2b01f31be12db2
 
 })
 
