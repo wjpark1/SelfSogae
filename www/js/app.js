@@ -4,9 +4,13 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+<<<<<<< HEAD
 angular.module('starter', ['ionic', 'starter.controllers','starter.loginControllers','starter.chat-services','btford.socket-io'])
+=======
+angular.module('starter', ['ionic', 'starter.controllers','starter.loginControllers','starter.chatControllers','starter.chat-services','btford.socket-io','starter.apiservices'])
+>>>>>>> 63ddfc606d0eb66a3dd10f44e543ee498775fc6b
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$cordovaSplashscreen,$ionicPopup) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -18,11 +22,24 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
+   }
+
+  if(window.Connection) {
+      if(navigator.connection.type == Connection.NONE) {
+        $ionicPopup.confirm({
+          title: 'No Internet Connection',
+          content: 'Sorry, no Internet connectivity detected. Please reconnect and try again.'
+        })
+        .then(function(result) {
+          if(!result) {
+            ionic.Platform.exitApp();
+          }
+        });
+      }
     }
 
-
-
   });
+
 })
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
@@ -53,6 +70,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
         url:'/selected',
         templateUrl:'templates/SelectedDetails.html'
       })
+
       .state('home',{
         url:'/home',
         abstract: true,
@@ -109,11 +127,18 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.loginControll
       .state('terms',{
         url:'/terms',
         templateUrl:'templates/terms.html'
+<<<<<<< HEAD
       })
       ;
 
       $urlRouterProvider.otherwise('/home/match');
+=======
+>>>>>>> 63ddfc606d0eb66a3dd10f44e543ee498775fc6b
 
+      });
+
+
+      $urlRouterProvider.otherwise('/home/notifications');
 })
 
 .filter('nl2br', ['$filter',

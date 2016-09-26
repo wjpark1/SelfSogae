@@ -1,24 +1,19 @@
 <ion-view view-title="Notifications">
 	<ion-content>
-	<div class ="requests" ng-repeat = "chatRoom in chatRoomList">
-			<div class="list card cardNotify " style="width:100%;margin:0px;background-color:#F08080">
-			
-		    <div class="item item-avatar shade" ng-click="viewProfile()">
-		      <img src="../img/profile1.png">
-		      <h2><strong>Venkman likes you</strong></h2>
-		      <h2>Age : 20</h2>
-		      <h2>from : ludhiana</h2>
-		      
+
+			<div class="card NotifyCard" ng-repeat = "requests in requestList">
+		    <div  class="item item-avatar shade" ng-click="">
+		      <img src={{requests.picture}}>
+		        <div class="my-container left setWidth">
+      					<h2 class="row first-row wrapping"><strong>{{requests.name}} likes you</strong></h2>
+						<h2 class="row first-row">Height : {{requests.height}}</h2>
+						<h2 class="row first-row wrapping">{{requests.occupation}}</h2>
+				</div>
+		      <div class="right">
+		      		<button class=" button button-outline button-balanced"  ng-click="acceptFun(this,{{requests.username}})"><i class="ion ion-checkmark" ></i></button>
+		      		<button class=" button button-outline button-assertive" ng-click = "rejectFun(this,{{requests.username}})"><i class="ion ion-close"></i></button>
+		      </div>
 		    </div>
-		<div class="btnArea">
-			 <button class="button button-icon ion ion-checkmark accbtn" style="background-color:lightgreen" ng-click="acceptFunc()">
- 					Accept
-			</button>
-			<button class="button button-icon ion ion-close" style="background-color:red;opacity:0.6" ng-click="rejectFun()">
-  					Reject
-			</button>
 		</div>
-		</div>
-	</div>
 	</ion-content>
 </ion-view>
